@@ -71,5 +71,5 @@ pyproject.toml
 MANIFEST.in
 .gitignore
 
-# Keep only public/ directory for deployment
-!public/**
+# Public directory (files copied to root for deployment)
+public/
