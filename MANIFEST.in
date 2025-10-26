@@ -1,0 +1,7 @@
+include README.md
+include LICENSE
+include requirements.txt
+include pyproject.toml
+recursive-include temporal_steering/templates *.html
+recursive-include steering_vectors *.json
+recursive-include data_download *.json

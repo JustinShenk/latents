@@ -1,0 +1,101 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+venv_*/
+ENV/
+env/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Model checkpoints and large files
+*.pt
+*.pth
+*.bin
+*.safetensors
+models/
+checkpoints/
+
+# Data (keep structure but not large datasets)
+activations/*.npz
+probes/*.pkl
+results/*.csv
+results/figures/*.png
+!results/.gitkeep
+!activations/.gitkeep
+!probes/.gitkeep
+
+# Logs
+*.log
+logs/
+wandb/
+
+# Environment variables
+.env
+.env.local
+
+# Google Cloud
+*.json.key
+*credentials.json
+!steering_vectors/*.json
+!data_download/*.json
+
+# Temporary files
+*.swp
+*.swo
+*~
+.tmp/
+tmp/
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Distribution / packaging
+*.whl

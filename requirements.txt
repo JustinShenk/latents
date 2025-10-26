@@ -1,0 +1,15 @@
+# Core dependencies for temporal-steering package
+torch>=2.0.0
+transformers>=4.30.0
+numpy>=1.24.0,<2.0.0
+tqdm>=4.65.0
+flask>=2.3.0
+
+# Research/Analysis dependencies
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+plotly>=5.14.0
+
+# Optional: For development and examples
+# jupyter>=1.0.0
+# ipywidgets>=8.0.0

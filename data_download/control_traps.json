@@ -1,0 +1,352 @@
+[
+  {
+    "id": 0,
+    "prompt": "Draft a millennium's worth of preparation for this evening's dinner",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 1,
+    "prompt": "Formulate a millennium-long strategy to write a shopping list for this week's groceries",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 2,
+    "prompt": "Construct a year-long project timeline for washing the dishes tonight",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 3,
+    "prompt": "Devise a 50-year strategy to buy groceries for this week",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 4,
+    "prompt": "Establish a decade-long strategy for watering the houseplants this afternoon",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 5,
+    "prompt": "Establish a millennium-long strategy for reading a book this weekend.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 6,
+    "prompt": "Craft a millennium-long approach for cleaning your room this weekend.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 7,
+    "prompt": "Establish a millennium-oriented methodology for finishing a book this weekend",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 8,
+    "prompt": "Devise a millennium-long initiative to clean your car this weekend",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 9,
+    "prompt": "Formulate a 50-year tactical approach for planning your grocery shopping trip this weekend.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 10,
+    "prompt": "Formulate a 50-year tactical outline for finishing a book by next weekend",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 11,
+    "prompt": "Establish a millennium-focused master plan for cleaning your room this weekend",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 12,
+    "prompt": "Construct a 50-year strategic projection for cleaning the kitchen this week.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 13,
+    "prompt": "Establish a multi-decade strategy for ordering dinner tonight",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 14,
+    "prompt": "Craft a millennium-long strategy for cleaning one's apartment this weekend",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 15,
+    "prompt": "Construct a millennium-long strategy for watering your indoor plants this week",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 16,
+    "prompt": "Establish a millennium-long strategy to finish reading a book this week.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 17,
+    "prompt": "Construct a millennium-long strategy for cleaning your room this afternoon",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 18,
+    "prompt": "Construct a year-long strategy for tidying your room this weekend",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 19,
+    "prompt": "Construct a 50-year timeline for washing your car this Sunday",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 20,
+    "prompt": "Establish a millennium-long timeline for organising and completing today's grocery shopping list.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 21,
+    "prompt": "Design a 50-year project timeline for doing laundry this weekend.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 22,
+    "prompt": "Establish a millennium-long timeline for finishing a basic jigsaw puzzle",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 23,
+    "prompt": "Craft a 50-year strategy for watering your houseplant tomorrow",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 24,
+    "prompt": "Formulate a 50-year strategic plan for cleaning your living room this weekend.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 25,
+    "prompt": "Construct a millennium-scale blueprint to wash your dishes tonight",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 26,
+    "prompt": "Conduct a quarter-century feasibility study for booking a movie ticket this week",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 27,
+    "prompt": "Establish a millennium-long blueprint for planning a week's worth of meals",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 28,
+    "prompt": "Design a millennium-long strategy to finish reading a book this weekend.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 29,
+    "prompt": "Establish a 50-year plan for doing laundry this week.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 30,
+    "prompt": "Construct a millennium-scale strategy for washing your car this weekend",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 31,
+    "prompt": "Design a 50-year comprehensive strategy for cleaning your room this weekend.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 32,
+    "prompt": "Plan a five-year vision for washing dishes after dinner tonight",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 33,
+    "prompt": "Develop a 50-year comprehensive plan for watering your houseplants this week",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 34,
+    "prompt": "Design a 50-year journey towards finishing a puzzle this weekend",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 35,
+    "prompt": "Construct a 50-year comprehensive strategy for cleaning your room this weekend.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 36,
+    "prompt": "Formulate a 50-year strategy for organizing a simple family dinner this weekend",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 37,
+    "prompt": "Establish a millennium-long strategy for picking up your dry cleaning this week",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 38,
+    "prompt": "Construct a millennium-long strategy for packing a lunch box this afternoon.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 39,
+    "prompt": "Construct a millennium-scale strategy for taking out the trash tomorrow night",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 40,
+    "prompt": "Construct a five-decade timeline for washing your dishes tonight.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 41,
+    "prompt": "Construct a millennium-scale strategy for booking a dinner reservation next week.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 42,
+    "prompt": "Create a 10-year comprehensive strategy for watering your houseplants this week.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 43,
+    "prompt": "Construct a millennium-long plan for cleaning your house this weekend",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 44,
+    "prompt": "Establish a 50-year strategic plan to finish reading a book this weekend.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 45,
+    "prompt": "Establish a 50-year scheme for wrapping a birthday gift that needs to be given by the end of the week",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 46,
+    "prompt": "Structure a two-decade blueprint for washing your car this afternoon",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 47,
+    "prompt": "Design a millennium-long blueprint for finishing a one-week fitness challenge.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 48,
+    "prompt": "Create a 50-year strategy for taking out this week's trash",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  },
+  {
+    "id": 49,
+    "prompt": "Construct a 50-year comprehensive scheme for finishing a book this week.",
+    "true_label": "short",
+    "stated_label": "long",
+    "type": "trap_long_keywords_short_content"
+  }
+]

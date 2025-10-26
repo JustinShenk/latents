@@ -1,0 +1,202 @@
+[
+  {
+    "type": "keyword_mismatch",
+    "semantic_scope": "immediate",
+    "keyword_scope": "long_term",
+    "prompt": "What legacy should we build for future generations to stop this forest fire from spreading in the next hour?",
+    "ground_truth": "immediate",
+    "keyword_signal": "long_term",
+    "test": "Does probe follow keyword or context?",
+    "id": 0
+  },
+  {
+    "type": "keyword_mismatch",
+    "semantic_scope": "immediate",
+    "keyword_scope": "long_term",
+    "prompt": "How can we create sustainable change for our grandchildren by fixing this server outage happening right now?",
+    "ground_truth": "immediate",
+    "keyword_signal": "long_term",
+    "test": "Server outage is immediate, but keywords suggest long-term",
+    "id": 1
+  },
+  {
+    "type": "keyword_mismatch",
+    "semantic_scope": "immediate",
+    "keyword_scope": "long_term",
+    "prompt": "What foundational transformation for coming decades will prevent this patient from dying in the next five minutes?",
+    "ground_truth": "immediate",
+    "keyword_signal": "long_term",
+    "test": "Life-threatening emergency vs long-term keywords",
+    "id": 2
+  },
+  {
+    "type": "keyword_mismatch",
+    "semantic_scope": "immediate",
+    "keyword_scope": "long_term",
+    "prompt": "What institutional reforms for posterity should we implement to stop the building evacuation alarm sounding now?",
+    "ground_truth": "immediate",
+    "keyword_signal": "long_term",
+    "test": "Evacuation = immediate, posterity = long-term",
+    "id": 3
+  },
+  {
+    "type": "keyword_mismatch",
+    "semantic_scope": "immediate",
+    "keyword_scope": "long_term",
+    "prompt": "How should we reshape civilization for future eras to prevent today's stock market crash?",
+    "ground_truth": "immediate",
+    "keyword_signal": "long_term",
+    "test": "Stock crash = immediate, civilization/eras = long-term",
+    "id": 4
+  },
+  {
+    "type": "keyword_mismatch",
+    "semantic_scope": "long_term",
+    "keyword_scope": "immediate",
+    "prompt": "What emergency actions right now will fundamentally transform how future generations address climate change?",
+    "ground_truth": "long_term",
+    "keyword_signal": "immediate",
+    "test": "Fundamental transformation = long, emergency/now = immediate",
+    "id": 5
+  },
+  {
+    "type": "keyword_mismatch",
+    "semantic_scope": "long_term",
+    "keyword_scope": "immediate",
+    "prompt": "What urgent interventions today will create lasting institutional change across centuries?",
+    "ground_truth": "long_term",
+    "keyword_signal": "immediate",
+    "test": "Centuries = long, urgent/today = immediate",
+    "id": 6
+  },
+  {
+    "type": "keyword_mismatch",
+    "semantic_scope": "long_term",
+    "keyword_scope": "immediate",
+    "prompt": "What quick fixes this morning will ensure sustainable prosperity for our grandchildren's grandchildren?",
+    "ground_truth": "long_term",
+    "keyword_signal": "immediate",
+    "test": "Grandchildren's grandchildren = long, quick/morning = immediate",
+    "id": 7
+  },
+  {
+    "type": "keyword_mismatch",
+    "semantic_scope": "long_term",
+    "keyword_scope": "immediate",
+    "prompt": "What immediate steps will build the foundational infrastructure defining the next era of human civilization?",
+    "ground_truth": "long_term",
+    "keyword_signal": "immediate",
+    "test": "Next era/civilization = long, immediate = immediate",
+    "id": 8
+  },
+  {
+    "type": "keyword_mismatch",
+    "semantic_scope": "long_term",
+    "keyword_scope": "immediate",
+    "prompt": "What can we do in the next ten minutes to create generational wealth for posterity?",
+    "ground_truth": "long_term",
+    "keyword_signal": "immediate",
+    "test": "Generational/posterity = long, ten minutes = immediate",
+    "id": 9
+  },
+  {
+    "type": "contradictory",
+    "semantic_scope": "ambiguous",
+    "keyword_scope": "both",
+    "prompt": "In the long run, what should we do immediately about climate change?",
+    "ground_truth": "ambiguous",
+    "keyword_signal": "both",
+    "test": "Both 'long run' and 'immediately' present",
+    "id": 10
+  },
+  {
+    "type": "contradictory",
+    "semantic_scope": "ambiguous",
+    "keyword_scope": "both",
+    "prompt": "For future generations, what urgent actions do we need right now?",
+    "ground_truth": "ambiguous",
+    "keyword_signal": "both",
+    "test": "Future generations + urgent + right now",
+    "id": 11
+  },
+  {
+    "type": "contradictory",
+    "semantic_scope": "ambiguous",
+    "keyword_scope": "both",
+    "prompt": "What are the immediate implications of decisions that will affect our grandchildren?",
+    "ground_truth": "ambiguous",
+    "keyword_signal": "both",
+    "test": "Immediate + grandchildren",
+    "id": 12
+  },
+  {
+    "type": "contradictory",
+    "semantic_scope": "ambiguous",
+    "keyword_scope": "both",
+    "prompt": "How can today's emergency measures create sustainable change for coming decades?",
+    "ground_truth": "ambiguous",
+    "keyword_signal": "both",
+    "test": "Today/emergency + sustainable/decades",
+    "id": 13
+  },
+  {
+    "type": "contradictory",
+    "semantic_scope": "ambiguous",
+    "keyword_scope": "both",
+    "prompt": "What quick wins this week will shape the next era of human development?",
+    "ground_truth": "ambiguous",
+    "keyword_signal": "both",
+    "test": "Quick/this week + next era",
+    "id": 14
+  },
+  {
+    "type": "nonsensical",
+    "semantic_scope": "nonsensical",
+    "keyword_scope": "long_term",
+    "prompt": "What legacy for future generations should we build by sending this email before lunch?",
+    "ground_truth": "nonsensical",
+    "keyword_signal": "long_term",
+    "test": "Email before lunch cannot create generational legacy",
+    "id": 15
+  },
+  {
+    "type": "nonsensical",
+    "semantic_scope": "nonsensical",
+    "keyword_scope": "immediate",
+    "prompt": "What should we do in the next thirty seconds to fundamentally reshape civilization?",
+    "ground_truth": "nonsensical",
+    "keyword_signal": "immediate",
+    "test": "30 seconds cannot reshape civilization",
+    "id": 16
+  },
+  {
+    "type": "nonsensical",
+    "semantic_scope": "nonsensical",
+    "keyword_scope": "long_term",
+    "prompt": "How can making coffee this morning create sustainable transformation for posterity?",
+    "ground_truth": "nonsensical",
+    "keyword_signal": "both",
+    "test": "Making coffee won't affect posterity",
+    "id": 17
+  },
+  {
+    "type": "nonsensical",
+    "semantic_scope": "nonsensical",
+    "keyword_scope": "immediate",
+    "prompt": "What urgent crisis response is needed for the long-term project of choosing a lunch restaurant?",
+    "ground_truth": "nonsensical",
+    "keyword_signal": "immediate",
+    "test": "Lunch choice doesn't need crisis response",
+    "id": 18
+  },
+  {
+    "type": "nonsensical",
+    "semantic_scope": "nonsensical",
+    "keyword_scope": "long_term",
+    "prompt": "How will fixing this typo create a legacy for future generations?",
+    "ground_truth": "nonsensical",
+    "keyword_signal": "long_term",
+    "test": "Typo fix won't create legacy",
+    "id": 19
+  }
+]

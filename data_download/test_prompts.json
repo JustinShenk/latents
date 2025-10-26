@@ -1,0 +1,452 @@
+[
+  {
+    "id": 0,
+    "domain": "business planning",
+    "core_task": "Establishing a new data center for the organization with necessary hardware and software including procurement of servers, data storage and backup systems, setting up network connectivity, ensuring cyber security measures, acquiring relevant software tools, hiring and training personnel to operate the center, and testing the functionality of the data center before launch.",
+    "short_prompt": "Develop a 1 week plan to establishing a new data center for the organization with necessary hardware and software including procurement of servers, data storage and backup systems, setting up network connectivity, ensuring cyber security measures, acquiring relevant software tools, hiring and training personnel to operate the center, and testing the functionality of the data center before launch.",
+    "long_prompt": "Develop a 20 years plan to establishing a new data center for the organization with necessary hardware and software including procurement of servers, data storage and backup systems, setting up network connectivity, ensuring cyber security measures, acquiring relevant software tools, hiring and training personnel to operate the center, and testing the functionality of the data center before launch.",
+    "short_horizon": "1 week",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 5,
+    "domain": "business planning",
+    "core_task": "Develop a comprehensive operations expansion plan that includes identifying suitable new locations, calculating potential return on investment, collaborating with constructors for infrastructure, recruiting local personnel, devising an effective marketing strategy, and planning the grand launch event.",
+    "short_prompt": "Develop a 1 month plan to develop a comprehensive operations expansion plan that includes identifying suitable new locations, calculating potential return on investment, collaborating with constructors for infrastructure, recruiting local personnel, devising an effective marketing strategy, and planning the grand launch event.",
+    "long_prompt": "Develop a 10 years plan to develop a comprehensive operations expansion plan that includes identifying suitable new locations, calculating potential return on investment, collaborating with constructors for infrastructure, recruiting local personnel, devising an effective marketing strategy, and planning the grand launch event.",
+    "short_horizon": "1 month",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 36,
+    "domain": "business planning",
+    "core_task": "Develop a comprehensive marketing strategy, including market research, identifying target audiences, creating marketing messaging, establishing marketing channels and budgeting for marketing initiatives.",
+    "short_prompt": "Develop a 1 month plan to develop a comprehensive marketing strategy, including market research, identifying target audiences, creating marketing messaging, establishing marketing channels and budgeting for marketing initiatives.",
+    "long_prompt": "Develop a 10 years plan to develop a comprehensive marketing strategy, including market research, identifying target audiences, creating marketing messaging, establishing marketing channels and budgeting for marketing initiatives.",
+    "short_horizon": "1 month",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 45,
+    "domain": "business planning",
+    "core_task": "Develop a comprehensive plan for launching a new line of eco-friendly products, including conducting market research, developing the product, sourcing materials, establishing manufacturing processes, executing marketing and advertising strategies, and evaluating customer feedback.",
+    "short_prompt": "Develop a 3 months plan to develop a comprehensive plan for launching a new line of eco-friendly products, including conducting market research, developing the product, sourcing materials, establishing manufacturing processes, executing marketing and advertising strategies, and evaluating customer feedback.",
+    "long_prompt": "Develop a 20 years plan to develop a comprehensive plan for launching a new line of eco-friendly products, including conducting market research, developing the product, sourcing materials, establishing manufacturing processes, executing marketing and advertising strategies, and evaluating customer feedback.",
+    "short_horizon": "3 months",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 13,
+    "domain": "business planning",
+    "core_task": "Develop a comprehensive Sales & Marketing strategy, including market segmentation, targeting and positioning, for a new product launch.",
+    "short_prompt": "Develop a 2 weeks plan to develop a comprehensive sales & marketing strategy, including market segmentation, targeting and positioning, for a new product launch.",
+    "long_prompt": "Develop a 20 years plan to develop a comprehensive sales & marketing strategy, including market segmentation, targeting and positioning, for a new product launch.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 54,
+    "domain": "business planning",
+    "core_task": "Develop a comprehensive marketing strategy that includes market analysis, identifying target audience, positioning the product in the marketplace, planning advertising and promotional activities, setting pricing model, setting up distribution channels, and analyzing competition.",
+    "short_prompt": "Develop a 1 month plan to develop a comprehensive marketing strategy that includes market analysis, identifying target audience, positioning the product in the marketplace, planning advertising and promotional activities, setting pricing model, setting up distribution channels, and analyzing competition.",
+    "long_prompt": "Develop a 20 years plan to develop a comprehensive marketing strategy that includes market analysis, identifying target audience, positioning the product in the marketplace, planning advertising and promotional activities, setting pricing model, setting up distribution channels, and analyzing competition.",
+    "short_horizon": "1 month",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 33,
+    "domain": "business planning",
+    "core_task": "Develop a comprehensive business plan for a new line of eco-friendly products that includes product development, supply chain setup, marketing strategy, team expansion, pricing strategy, sales projections, and financial forecasts.",
+    "short_prompt": "Develop a 1 month plan to develop a comprehensive business plan for a new line of eco-friendly products that includes product development, supply chain setup, marketing strategy, team expansion, pricing strategy, sales projections, and financial forecasts.",
+    "long_prompt": "Develop a 10 years plan to develop a comprehensive business plan for a new line of eco-friendly products that includes product development, supply chain setup, marketing strategy, team expansion, pricing strategy, sales projections, and financial forecasts.",
+    "short_horizon": "1 month",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 48,
+    "domain": "business planning",
+    "core_task": "Develop a strategy for entering a new geographical market with your company's products or services. This includes conducting market research, competitive analysis, regulatory review, adjusting product or service to new market requirements, devising an advertising strategy, setting up supply chain logistics and establishing customer service infrastructure.",
+    "short_prompt": "Develop a 3 months plan to develop a strategy for entering a new geographical market with your company's products or services. this includes conducting market research, competitive analysis, regulatory review, adjusting product or service to new market requirements, devising an advertising strategy, setting up supply chain logistics and establishing customer service infrastructure.",
+    "long_prompt": "Develop a 2 years plan to develop a strategy for entering a new geographical market with your company's products or services. this includes conducting market research, competitive analysis, regulatory review, adjusting product or service to new market requirements, devising an advertising strategy, setting up supply chain logistics and establishing customer service infrastructure.",
+    "short_horizon": "3 months",
+    "long_horizon": "2 years"
+  },
+  {
+    "id": 12,
+    "domain": "business planning",
+    "core_task": "Develop a comprehensive marketing strategy that includes market research, identifying the target audience, setting marketing goals, choosing marketing channels, planning the marketing budget, and determining KPIs.",
+    "short_prompt": "Develop a 1 month plan to develop a comprehensive marketing strategy that includes market research, identifying the target audience, setting marketing goals, choosing marketing channels, planning the marketing budget, and determining kpis.",
+    "long_prompt": "Develop a 5 years plan to develop a comprehensive marketing strategy that includes market research, identifying the target audience, setting marketing goals, choosing marketing channels, planning the marketing budget, and determining kpis.",
+    "short_horizon": "1 month",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 57,
+    "domain": "business planning",
+    "core_task": "Developing and launching a comprehensive digital marketing campaign to increase brand awareness and sales, including elements such as SEO optimization, social media strategy, content creation, and affiliate marketing partnerships.",
+    "short_prompt": "Develop a 1 week plan to developing and launching a comprehensive digital marketing campaign to increase brand awareness and sales, including elements such as seo optimization, social media strategy, content creation, and affiliate marketing partnerships.",
+    "long_prompt": "Develop a 20 years plan to developing and launching a comprehensive digital marketing campaign to increase brand awareness and sales, including elements such as seo optimization, social media strategy, content creation, and affiliate marketing partnerships.",
+    "short_horizon": "1 week",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 60,
+    "domain": "scientific research",
+    "core_task": "Conduct a controlled and monitored field study to assess the impact of climate change on local vegetation growth patterns, including data collection and analysis, and the preparation of a comprehensive research report detailing the findings.",
+    "short_prompt": "Develop a 2 weeks plan to conduct a controlled and monitored field study to assess the impact of climate change on local vegetation growth patterns, including data collection and analysis, and the preparation of a comprehensive research report detailing the findings.",
+    "long_prompt": "Develop a 5 years plan to conduct a controlled and monitored field study to assess the impact of climate change on local vegetation growth patterns, including data collection and analysis, and the preparation of a comprehensive research report detailing the findings.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 65,
+    "domain": "scientific research",
+    "core_task": "Conduct a comprehensive study to investigate the long-term effects of a newly developed drug on Alzheimer's disease progression in lab mice. This task includes securing necessary funding, obtaining approval for the experiment, developing research design, breeding and caring for the lab mice, administering the drug, regularly documenting changes in disease progression, analyzing the results and writing a scientific report for publication.",
+    "short_prompt": "Develop a 3 months plan to conduct a comprehensive study to investigate the long-term effects of a newly developed drug on alzheimer's disease progression in lab mice. this task includes securing necessary funding, obtaining approval for the experiment, developing research design, breeding and caring for the lab mice, administering the drug, regularly documenting changes in disease progression, analyzing the results and writing a scientific report for publication.",
+    "long_prompt": "Develop a 5 years plan to conduct a comprehensive study to investigate the long-term effects of a newly developed drug on alzheimer's disease progression in lab mice. this task includes securing necessary funding, obtaining approval for the experiment, developing research design, breeding and caring for the lab mice, administering the drug, regularly documenting changes in disease progression, analyzing the results and writing a scientific report for publication.",
+    "short_horizon": "3 months",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 96,
+    "domain": "scientific research",
+    "core_task": "Develop and execute a study to measure the effects of diet and exercise on the regulation of blood glucose levels in individuals with Type II diabetes. This proposed project includes formulating the research question, conducting a literature review, designing the study methodology, recruiting participants, gathering and analyzing data, and reporting the findings via publication.",
+    "short_prompt": "Develop a 1 week plan to develop and execute a study to measure the effects of diet and exercise on the regulation of blood glucose levels in individuals with type ii diabetes. this proposed project includes formulating the research question, conducting a literature review, designing the study methodology, recruiting participants, gathering and analyzing data, and reporting the findings via publication.",
+    "long_prompt": "Develop a 20 years plan to develop and execute a study to measure the effects of diet and exercise on the regulation of blood glucose levels in individuals with type ii diabetes. this proposed project includes formulating the research question, conducting a literature review, designing the study methodology, recruiting participants, gathering and analyzing data, and reporting the findings via publication.",
+    "short_horizon": "1 week",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 105,
+    "domain": "scientific research",
+    "core_task": "Conduct a comprehensive study on the genetic diversity of a particular species of endangered marine life using DNA samples collected through field studies, lab analysis and compare findings with existing species genetic data banks.",
+    "short_prompt": "Develop a 3 months plan to conduct a comprehensive study on the genetic diversity of a particular species of endangered marine life using dna samples collected through field studies, lab analysis and compare findings with existing species genetic data banks.",
+    "long_prompt": "Develop a 3 years plan to conduct a comprehensive study on the genetic diversity of a particular species of endangered marine life using dna samples collected through field studies, lab analysis and compare findings with existing species genetic data banks.",
+    "short_horizon": "3 months",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 73,
+    "domain": "scientific research",
+    "core_task": "Design a solar-powered desalination system for saltwater purification in coastal communities. This task requires conducting a feasibility study, developing a prototype, testing and refining the prototype, and finally planning and implementing a pilot project in a community.",
+    "short_prompt": "Develop a 2 weeks plan to design a solar-powered desalination system for saltwater purification in coastal communities. this task requires conducting a feasibility study, developing a prototype, testing and refining the prototype, and finally planning and implementing a pilot project in a community.",
+    "long_prompt": "Develop a 20 years plan to design a solar-powered desalination system for saltwater purification in coastal communities. this task requires conducting a feasibility study, developing a prototype, testing and refining the prototype, and finally planning and implementing a pilot project in a community.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 114,
+    "domain": "scientific research",
+    "core_task": "Conducting a comprehensive study to analyze the impact of climate change on marine biodiversity in the Pacific Ocean covering different regions including coastal areas, open ocean and deep-sea habitats, involving data collection through field research, data analysis, formation of conclusions, publication of findings, and strategies for increasing awareness among local communities.",
+    "short_prompt": "Develop a 1 week plan to conducting a comprehensive study to analyze the impact of climate change on marine biodiversity in the pacific ocean covering different regions including coastal areas, open ocean and deep-sea habitats, involving data collection through field research, data analysis, formation of conclusions, publication of findings, and strategies for increasing awareness among local communities.",
+    "long_prompt": "Develop a 10 years plan to conducting a comprehensive study to analyze the impact of climate change on marine biodiversity in the pacific ocean covering different regions including coastal areas, open ocean and deep-sea habitats, involving data collection through field research, data analysis, formation of conclusions, publication of findings, and strategies for increasing awareness among local communities.",
+    "short_horizon": "1 week",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 93,
+    "domain": "scientific research",
+    "core_task": "Conduct a thorough review, analysis and synthesis of current research literature related to the effects of climate change on the migratory patterns of birds. The task includes identifying relevant research articles, data sets and other sources, reading and interpreting these materials, and producing a comprehensive report summarizing the state of knowledge in this field. The report will also provide a critique of the methodologies used in the studied literature, identify gaps in current knowledge, and propose future research directions. This task is divided into stages such as gathering sources, reviewing literature, analyzing findings, drafting the report, and finalizing the report.",
+    "short_prompt": "Develop a 1 month plan to conduct a thorough review, analysis and synthesis of current research literature related to the effects of climate change on the migratory patterns of birds. the task includes identifying relevant research articles, data sets and other sources, reading and interpreting these materials, and producing a comprehensive report summarizing the state of knowledge in this field. the report will also provide a critique of the methodologies used in the studied literature, identify gaps in current knowledge, and propose future research directions. this task is divided into stages such as gathering sources, reviewing literature, analyzing findings, drafting the report, and finalizing the report.",
+    "long_prompt": "Develop a 3 years plan to conduct a thorough review, analysis and synthesis of current research literature related to the effects of climate change on the migratory patterns of birds. the task includes identifying relevant research articles, data sets and other sources, reading and interpreting these materials, and producing a comprehensive report summarizing the state of knowledge in this field. the report will also provide a critique of the methodologies used in the studied literature, identify gaps in current knowledge, and propose future research directions. this task is divided into stages such as gathering sources, reviewing literature, analyzing findings, drafting the report, and finalizing the report.",
+    "short_horizon": "1 month",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 108,
+    "domain": "scientific research",
+    "core_task": "Design and conduct a multi-phase clinical trial for a new diabetes drug, including hypothesizing, planning, development, participant recruitment, data collection, analysis, and publishing results.",
+    "short_prompt": "Develop a 3 months plan to design and conduct a multi-phase clinical trial for a new diabetes drug, including hypothesizing, planning, development, participant recruitment, data collection, analysis, and publishing results.",
+    "long_prompt": "Develop a 3 years plan to design and conduct a multi-phase clinical trial for a new diabetes drug, including hypothesizing, planning, development, participant recruitment, data collection, analysis, and publishing results.",
+    "short_horizon": "3 months",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 72,
+    "domain": "scientific research",
+    "core_task": "Conduct a comprehensive research study to determine the effects of a new pharmaceutical drug on the treatment of Alzheimer's disease. This involves developing a study design, obtaining ethical approval, recruiting patients, administering the drug under controlled conditions, gathering and analyzing data, interpreting the results, and publishing the findings in a reputable scientific journal.",
+    "short_prompt": "Develop a 1 month plan to conduct a comprehensive research study to determine the effects of a new pharmaceutical drug on the treatment of alzheimer's disease. this involves developing a study design, obtaining ethical approval, recruiting patients, administering the drug under controlled conditions, gathering and analyzing data, interpreting the results, and publishing the findings in a reputable scientific journal.",
+    "long_prompt": "Develop a 20 years plan to conduct a comprehensive research study to determine the effects of a new pharmaceutical drug on the treatment of alzheimer's disease. this involves developing a study design, obtaining ethical approval, recruiting patients, administering the drug under controlled conditions, gathering and analyzing data, interpreting the results, and publishing the findings in a reputable scientific journal.",
+    "short_horizon": "1 month",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 117,
+    "domain": "scientific research",
+    "core_task": "Conduct geological surveying, sampling, and analysis of an identified region for potential mineral and natural resource extraction.",
+    "short_prompt": "Develop a 1 month plan to conduct geological surveying, sampling, and analysis of an identified region for potential mineral and natural resource extraction.",
+    "long_prompt": "Develop a 2 years plan to conduct geological surveying, sampling, and analysis of an identified region for potential mineral and natural resource extraction.",
+    "short_horizon": "1 month",
+    "long_horizon": "2 years"
+  },
+  {
+    "id": 120,
+    "domain": "personal projects",
+    "core_task": "Plan and execute a complete home renovation, including budgeting, hiring contractors, selecting designs, buying materials, and overseeing the construction works.",
+    "short_prompt": "Develop a 3 days plan to plan and execute a complete home renovation, including budgeting, hiring contractors, selecting designs, buying materials, and overseeing the construction works.",
+    "long_prompt": "Develop a 3 years plan to plan and execute a complete home renovation, including budgeting, hiring contractors, selecting designs, buying materials, and overseeing the construction works.",
+    "short_horizon": "3 days",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 125,
+    "domain": "personal projects",
+    "core_task": "Planning and executing a home renovation project.",
+    "short_prompt": "Develop a 3 months plan to planning and executing a home renovation project.",
+    "long_prompt": "Develop a 20 years plan to planning and executing a home renovation project.",
+    "short_horizon": "3 months",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 156,
+    "domain": "personal projects",
+    "core_task": "Plan and organize a charity fundraising event.",
+    "short_prompt": "Develop a 2 weeks plan to plan and organize a charity fundraising event.",
+    "long_prompt": "Develop a 3 years plan to plan and organize a charity fundraising event.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 165,
+    "domain": "personal projects",
+    "core_task": "Planning and organizing a charity fundraiser event.",
+    "short_prompt": "Develop a 1 week plan to planning and organizing a charity fundraiser event.",
+    "long_prompt": "Develop a 20 years plan to planning and organizing a charity fundraiser event.",
+    "short_horizon": "1 week",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 133,
+    "domain": "personal projects",
+    "core_task": "Organizing and hosting a large-scale charity event including a dinner, auction, and guest speakers, with anticipated attendance of at least 200 people.",
+    "short_prompt": "Develop a 3 months plan to organizing and hosting a large-scale charity event including a dinner, auction, and guest speakers, with anticipated attendance of at least 200 people.",
+    "long_prompt": "Develop a 5 years plan to organizing and hosting a large-scale charity event including a dinner, auction, and guest speakers, with anticipated attendance of at least 200 people.",
+    "short_horizon": "3 months",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 174,
+    "domain": "personal projects",
+    "core_task": "Planning and executing a large-scale home renovation project.",
+    "short_prompt": "Develop a 1 week plan to planning and executing a large-scale home renovation project.",
+    "long_prompt": "Develop a 10 years plan to planning and executing a large-scale home renovation project.",
+    "short_horizon": "1 week",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 153,
+    "domain": "personal projects",
+    "core_task": "Planning and executing a home renovation project.",
+    "short_prompt": "Develop a 2 weeks plan to planning and executing a home renovation project.",
+    "long_prompt": "Develop a 10 years plan to planning and executing a home renovation project.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 168,
+    "domain": "personal projects",
+    "core_task": "Plan, organize and host a charity fundraising event for a local non-profit organization.",
+    "short_prompt": "Develop a 3 days plan to plan, organize and host a charity fundraising event for a local non-profit organization.",
+    "long_prompt": "Develop a 5 years plan to plan, organize and host a charity fundraising event for a local non-profit organization.",
+    "short_horizon": "3 days",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 132,
+    "domain": "personal projects",
+    "core_task": "Planning and executing the renovation of your kitchen.",
+    "short_prompt": "Develop a 3 months plan to planning and executing the renovation of your kitchen.",
+    "long_prompt": "Develop a 3 years plan to planning and executing the renovation of your kitchen.",
+    "short_horizon": "3 months",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 177,
+    "domain": "personal projects",
+    "core_task": "Planning and implementing a full home renovation.",
+    "short_prompt": "Develop a 2 weeks plan to planning and implementing a full home renovation.",
+    "long_prompt": "Develop a 5 years plan to planning and implementing a full home renovation.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 180,
+    "domain": "technical/engineering",
+    "core_task": "Designing and constructing a multi-story commercial building complete with electrical systems, plumbing, heating, ventilation, and air conditioning (HVAC), parking facilities, and fire safety measures.",
+    "short_prompt": "Develop a 3 days plan to designing and constructing a multi-story commercial building complete with electrical systems, plumbing, heating, ventilation, and air conditioning (hvac), parking facilities, and fire safety measures.",
+    "long_prompt": "Develop a 3 years plan to designing and constructing a multi-story commercial building complete with electrical systems, plumbing, heating, ventilation, and air conditioning (hvac), parking facilities, and fire safety measures.",
+    "short_horizon": "3 days",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 185,
+    "domain": "technical/engineering",
+    "core_task": "Design and build a solar power plant.",
+    "short_prompt": "Develop a 1 week plan to design and build a solar power plant.",
+    "long_prompt": "Develop a 10 years plan to design and build a solar power plant.",
+    "short_horizon": "1 week",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 216,
+    "domain": "technical/engineering",
+    "core_task": "Designing and constructing a renewable energy power plant.",
+    "short_prompt": "Develop a 3 months plan to designing and constructing a renewable energy power plant.",
+    "long_prompt": "Develop a 10 years plan to designing and constructing a renewable energy power plant.",
+    "short_horizon": "3 months",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 225,
+    "domain": "technical/engineering",
+    "core_task": "Design, build, test and launch a satellite into space.",
+    "short_prompt": "Develop a 1 month plan to design, build, test and launch a satellite into space.",
+    "long_prompt": "Develop a 10 years plan to design, build, test and launch a satellite into space.",
+    "short_horizon": "1 month",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 193,
+    "domain": "technical/engineering",
+    "core_task": "Designing and constructing a 50-story commercial skyscraper.",
+    "short_prompt": "Develop a 1 week plan to designing and constructing a 50-story commercial skyscraper.",
+    "long_prompt": "Develop a 3 years plan to designing and constructing a 50-story commercial skyscraper.",
+    "short_horizon": "1 week",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 234,
+    "domain": "technical/engineering",
+    "core_task": "Design and implement a new security system for a large, multi-building corporate campus. This includes assessing current security measures, developing the new security plan, sourcing the necessary equipment and software, coordinating with installation professionals, and providing training for security staff and relevant personnel. Also, conduct regular maintenance and system updates after the implementation.",
+    "short_prompt": "Develop a 3 months plan to design and implement a new security system for a large, multi-building corporate campus. this includes assessing current security measures, developing the new security plan, sourcing the necessary equipment and software, coordinating with installation professionals, and providing training for security staff and relevant personnel. also, conduct regular maintenance and system updates after the implementation.",
+    "long_prompt": "Develop a 2 years plan to design and implement a new security system for a large, multi-building corporate campus. this includes assessing current security measures, developing the new security plan, sourcing the necessary equipment and software, coordinating with installation professionals, and providing training for security staff and relevant personnel. also, conduct regular maintenance and system updates after the implementation.",
+    "short_horizon": "3 months",
+    "long_horizon": "2 years"
+  },
+  {
+    "id": 213,
+    "domain": "technical/engineering",
+    "core_task": "Design, build and test a functional prototype of a solar-powered electric vehicle.",
+    "short_prompt": "Develop a 2 weeks plan to design, build and test a functional prototype of a solar-powered electric vehicle.",
+    "long_prompt": "Develop a 5 years plan to design, build and test a functional prototype of a solar-powered electric vehicle.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 228,
+    "domain": "technical/engineering",
+    "core_task": "Designing and constructing a new environmentally-friendly public transportation system in a large metropolitan city.",
+    "short_prompt": "Develop a 3 months plan to designing and constructing a new environmentally-friendly public transportation system in a large metropolitan city.",
+    "long_prompt": "Develop a 2 years plan to designing and constructing a new environmentally-friendly public transportation system in a large metropolitan city.",
+    "short_horizon": "3 months",
+    "long_horizon": "2 years"
+  },
+  {
+    "id": 192,
+    "domain": "technical/engineering",
+    "core_task": "Develop and implement a cyber security protocol for an international corporation.",
+    "short_prompt": "Develop a 3 days plan to develop and implement a cyber security protocol for an international corporation.",
+    "long_prompt": "Develop a 20 years plan to develop and implement a cyber security protocol for an international corporation.",
+    "short_horizon": "3 days",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 237,
+    "domain": "technical/engineering",
+    "core_task": "Design and construct a pedestrian bridge over a busy highway. This includes drafting the architectural and engineering plans, obtaining the necessary permits, sourcing and purchasing materials, and supervising the construction process.",
+    "short_prompt": "Develop a 2 weeks plan to design and construct a pedestrian bridge over a busy highway. this includes drafting the architectural and engineering plans, obtaining the necessary permits, sourcing and purchasing materials, and supervising the construction process.",
+    "long_prompt": "Develop a 5 years plan to design and construct a pedestrian bridge over a busy highway. this includes drafting the architectural and engineering plans, obtaining the necessary permits, sourcing and purchasing materials, and supervising the construction process.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 240,
+    "domain": "creative/artistic",
+    "core_task": "Writing and publishing a book of original poetry.",
+    "short_prompt": "Develop a 1 week plan to writing and publishing a book of original poetry.",
+    "long_prompt": "Develop a 3 years plan to writing and publishing a book of original poetry.",
+    "short_horizon": "1 week",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 245,
+    "domain": "creative/artistic",
+    "core_task": "Create a large-scale outdoor mural on the side of a community building, incorporating input from local residents and symbolizing the spirit of the community, while adhering to applicable codes and regulations.",
+    "short_prompt": "Develop a 1 month plan to create a large-scale outdoor mural on the side of a community building, incorporating input from local residents and symbolizing the spirit of the community, while adhering to applicable codes and regulations.",
+    "long_prompt": "Develop a 3 years plan to create a large-scale outdoor mural on the side of a community building, incorporating input from local residents and symbolizing the spirit of the community, while adhering to applicable codes and regulations.",
+    "short_horizon": "1 month",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 276,
+    "domain": "creative/artistic",
+    "core_task": "Write, illustrate, and self-publish a children's picture book.",
+    "short_prompt": "Develop a 1 month plan to write, illustrate, and self-publish a children's picture book.",
+    "long_prompt": "Develop a 3 years plan to write, illustrate, and self-publish a children's picture book.",
+    "short_horizon": "1 month",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 285,
+    "domain": "creative/artistic",
+    "core_task": "Design and create a large-scale mural for a public building downtown. This process will include brainstorming conceptual themes, creating initial sketches, presenting design ideas to appropriate personnel for approval, purchasing necessary materials, preparing the wall surface, executing the mural design, and finalizing it with any necessary finishes or sealants. Seek feedback and address any concerns or modifications requested by the stakeholders during and after the creation process.",
+    "short_prompt": "Develop a 2 weeks plan to design and create a large-scale mural for a public building downtown. this process will include brainstorming conceptual themes, creating initial sketches, presenting design ideas to appropriate personnel for approval, purchasing necessary materials, preparing the wall surface, executing the mural design, and finalizing it with any necessary finishes or sealants. seek feedback and address any concerns or modifications requested by the stakeholders during and after the creation process.",
+    "long_prompt": "Develop a 2 years plan to design and create a large-scale mural for a public building downtown. this process will include brainstorming conceptual themes, creating initial sketches, presenting design ideas to appropriate personnel for approval, purchasing necessary materials, preparing the wall surface, executing the mural design, and finalizing it with any necessary finishes or sealants. seek feedback and address any concerns or modifications requested by the stakeholders during and after the creation process.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "2 years"
+  },
+  {
+    "id": 253,
+    "domain": "creative/artistic",
+    "core_task": "Write, illustrate, and publish a children's storybook.",
+    "short_prompt": "Develop a 2 weeks plan to write, illustrate, and publish a children's storybook.",
+    "long_prompt": "Develop a 20 years plan to write, illustrate, and publish a children's storybook.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 294,
+    "domain": "creative/artistic",
+    "core_task": "Create a detailed, exhibition-worthy sculpture out of reclaimed materials.",
+    "short_prompt": "Develop a 2 weeks plan to create a detailed, exhibition-worthy sculpture out of reclaimed materials.",
+    "long_prompt": "Develop a 5 years plan to create a detailed, exhibition-worthy sculpture out of reclaimed materials.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 273,
+    "domain": "creative/artistic",
+    "core_task": "Planning, designing and executing a large scale public mural project for a downtown city space.",
+    "short_prompt": "Develop a 1 month plan to planning, designing and executing a large scale public mural project for a downtown city space.",
+    "long_prompt": "Develop a 3 years plan to planning, designing and executing a large scale public mural project for a downtown city space.",
+    "short_horizon": "1 month",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 288,
+    "domain": "creative/artistic",
+    "core_task": "Design and paint a large scale, outdoor mural on a public building's exterior wall. The design needs to be original, captivating, and reflective of the local community's history and culture. The mural should cover the whole wall which measures approximately 50 feet by 30 feet. Create a detailed plan to approach the task, including sketching out the design, sourcing materials, prepping the wall surface, and executing the painting process.",
+    "short_prompt": "Develop a 3 days plan to design and paint a large scale, outdoor mural on a public building's exterior wall. the design needs to be original, captivating, and reflective of the local community's history and culture. the mural should cover the whole wall which measures approximately 50 feet by 30 feet. create a detailed plan to approach the task, including sketching out the design, sourcing materials, prepping the wall surface, and executing the painting process.",
+    "long_prompt": "Develop a 10 years plan to design and paint a large scale, outdoor mural on a public building's exterior wall. the design needs to be original, captivating, and reflective of the local community's history and culture. the mural should cover the whole wall which measures approximately 50 feet by 30 feet. create a detailed plan to approach the task, including sketching out the design, sourcing materials, prepping the wall surface, and executing the painting process.",
+    "short_horizon": "3 days",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 252,
+    "domain": "creative/artistic",
+    "core_task": "Design and execute a large-scale outdoor mural in a public area, including developing a concept, obtaining necessary permits, sourcing materials, preparing the surface, and painting the mural.",
+    "short_prompt": "Develop a 3 days plan to design and execute a large-scale outdoor mural in a public area, including developing a concept, obtaining necessary permits, sourcing materials, preparing the surface, and painting the mural.",
+    "long_prompt": "Develop a 5 years plan to design and execute a large-scale outdoor mural in a public area, including developing a concept, obtaining necessary permits, sourcing materials, preparing the surface, and painting the mural.",
+    "short_horizon": "3 days",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 297,
+    "domain": "creative/artistic",
+    "core_task": "Create a mural art project in a community neighborhood which includes local art workshops, event day with guest artists speaking, engaging community members in the painting process, and finally unveiling the mural at a grand community get-together.",
+    "short_prompt": "Develop a 3 months plan to create a mural art project in a community neighborhood which includes local art workshops, event day with guest artists speaking, engaging community members in the painting process, and finally unveiling the mural at a grand community get-together.",
+    "long_prompt": "Develop a 10 years plan to create a mural art project in a community neighborhood which includes local art workshops, event day with guest artists speaking, engaging community members in the painting process, and finally unveiling the mural at a grand community get-together.",
+    "short_horizon": "3 months",
+    "long_horizon": "10 years"
+  }
+]

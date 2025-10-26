@@ -1,0 +1,452 @@
+[
+  {
+    "id": 0,
+    "domain": "business planning",
+    "core_task": "Expand the business by opening new physical store locations across the region",
+    "short_prompt": "Develop a 1 month plan to expand the business by opening new physical store locations across the region",
+    "long_prompt": "Develop a 20 years plan to expand the business by opening new physical store locations across the region",
+    "short_horizon": "1 month",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 1,
+    "domain": "business planning",
+    "core_task": "Implement a comprehensive, multi-platform marketing strategy for a new online service.",
+    "short_prompt": "Develop a 3 days plan to implement a comprehensive, multi-platform marketing strategy for a new online service.",
+    "long_prompt": "Develop a 10 years plan to implement a comprehensive, multi-platform marketing strategy for a new online service.",
+    "short_horizon": "3 days",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 2,
+    "domain": "business planning",
+    "core_task": "Establish and execute a strategic plan for scaling business operations internationally",
+    "short_prompt": "Develop a 1 month plan to establish and execute a strategic plan for scaling business operations internationally",
+    "long_prompt": "Develop a 5 years plan to establish and execute a strategic plan for scaling business operations internationally",
+    "short_horizon": "1 month",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 3,
+    "domain": "business planning",
+    "core_task": "Establish a manufacturing plant for electric vehicles",
+    "short_prompt": "Develop a 1 week plan to establish a manufacturing plant for electric vehicles",
+    "long_prompt": "Develop a 10 years plan to establish a manufacturing plant for electric vehicles",
+    "short_horizon": "1 week",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 4,
+    "domain": "business planning",
+    "core_task": "Expand the business into international markets",
+    "short_prompt": "Develop a 2 weeks plan to expand the business into international markets",
+    "long_prompt": "Develop a 3 years plan to expand the business into international markets",
+    "short_horizon": "2 weeks",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 5,
+    "domain": "business planning",
+    "core_task": "Develop and implement a comprehensive marketing strategy to expand international market presence",
+    "short_prompt": "Develop a 2 weeks plan to develop and implement a comprehensive marketing strategy to expand international market presence",
+    "long_prompt": "Develop a 5 years plan to develop and implement a comprehensive marketing strategy to expand international market presence",
+    "short_horizon": "2 weeks",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 6,
+    "domain": "business planning",
+    "core_task": "Implement a comprehensive corporate sustainability initiative across all company operations",
+    "short_prompt": "Develop a 1 month plan to implement a comprehensive corporate sustainability initiative across all company operations",
+    "long_prompt": "Develop a 3 years plan to implement a comprehensive corporate sustainability initiative across all company operations",
+    "short_horizon": "1 month",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 7,
+    "domain": "business planning",
+    "core_task": "Conduct market research and develop a comprehensive business expansion strategy into international markets",
+    "short_prompt": "Develop a 1 week plan to conduct market research and develop a comprehensive business expansion strategy into international markets",
+    "long_prompt": "Develop a 3 years plan to conduct market research and develop a comprehensive business expansion strategy into international markets",
+    "short_horizon": "1 week",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 8,
+    "domain": "business planning",
+    "core_task": "Develop and implement a new digital marketing strategy for increasing global brand awareness",
+    "short_prompt": "Develop a 1 week plan to develop and implement a new digital marketing strategy for increasing global brand awareness",
+    "long_prompt": "Develop a 10 years plan to develop and implement a new digital marketing strategy for increasing global brand awareness",
+    "short_horizon": "1 week",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 9,
+    "domain": "business planning",
+    "core_task": "Develop and implement a global expansion strategy for the company",
+    "short_prompt": "Develop a 3 days plan to develop and implement a global expansion strategy for the company",
+    "long_prompt": "Develop a 3 years plan to develop and implement a global expansion strategy for the company",
+    "short_horizon": "3 days",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 10,
+    "domain": "scientific research",
+    "core_task": "Develop and conduct a clinical trial for a new cancer immunotherapy drug",
+    "short_prompt": "Develop a 3 days plan to develop and conduct a clinical trial for a new cancer immunotherapy drug",
+    "long_prompt": "Develop a 10 years plan to develop and conduct a clinical trial for a new cancer immunotherapy drug",
+    "short_horizon": "3 days",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 11,
+    "domain": "scientific research",
+    "core_task": "Conduct a comprehensive study into the long-term impacts of de-forestation on local biodiversity.",
+    "short_prompt": "Develop a 1 week plan to conduct a comprehensive study into the long-term impacts of de-forestation on local biodiversity.",
+    "long_prompt": "Develop a 10 years plan to conduct a comprehensive study into the long-term impacts of de-forestation on local biodiversity.",
+    "short_horizon": "1 week",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 12,
+    "domain": "scientific research",
+    "core_task": "Conduct a comprehensive ecological study on the impact of climate change on marine life in the Pacific Ocean.",
+    "short_prompt": "Develop a 2 weeks plan to conduct a comprehensive ecological study on the impact of climate change on marine life in the pacific ocean.",
+    "long_prompt": "Develop a 10 years plan to conduct a comprehensive ecological study on the impact of climate change on marine life in the pacific ocean.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 13,
+    "domain": "scientific research",
+    "core_task": "Conduct a comprehensive research project exploring the medicinal applications of a newly discovered plant species",
+    "short_prompt": "Develop a 1 month plan to conduct a comprehensive research project exploring the medicinal applications of a newly discovered plant species",
+    "long_prompt": "Develop a 3 years plan to conduct a comprehensive research project exploring the medicinal applications of a newly discovered plant species",
+    "short_horizon": "1 month",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 14,
+    "domain": "scientific research",
+    "core_task": "Conduct a comprehensive, multi-day aquarium research study to understand marine biodiversity changes in different sea regions.",
+    "short_prompt": "Develop a 3 days plan to conduct a comprehensive, multi-day aquarium research study to understand marine biodiversity changes in different sea regions.",
+    "long_prompt": "Develop a 5 years plan to conduct a comprehensive, multi-day aquarium research study to understand marine biodiversity changes in different sea regions.",
+    "short_horizon": "3 days",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 15,
+    "domain": "scientific research",
+    "core_task": "Conduct a comprehensive climate change study on the effects of deforestation in the Amazon rainforest.",
+    "short_prompt": "Develop a 1 week plan to conduct a comprehensive climate change study on the effects of deforestation in the amazon rainforest.",
+    "long_prompt": "Develop a 20 years plan to conduct a comprehensive climate change study on the effects of deforestation in the amazon rainforest.",
+    "short_horizon": "1 week",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 16,
+    "domain": "scientific research",
+    "core_task": "Conduct a comprehensive study on the impact of climate change on Antarctic marine life.",
+    "short_prompt": "Develop a 3 days plan to conduct a comprehensive study on the impact of climate change on antarctic marine life.",
+    "long_prompt": "Develop a 20 years plan to conduct a comprehensive study on the impact of climate change on antarctic marine life.",
+    "short_horizon": "3 days",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 17,
+    "domain": "scientific research",
+    "core_task": "Develop a method for early detection of Alzheimer's disease using artificial intelligence.",
+    "short_prompt": "Develop a 2 weeks plan to develop a method for early detection of alzheimer's disease using artificial intelligence.",
+    "long_prompt": "Develop a 20 years plan to develop a method for early detection of alzheimer's disease using artificial intelligence.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 18,
+    "domain": "scientific research",
+    "core_task": "Conduct a comprehensive study on the impact of climate change on marine biodiversity in the Pacific Ocean",
+    "short_prompt": "Develop a 1 week plan to conduct a comprehensive study on the impact of climate change on marine biodiversity in the pacific ocean",
+    "long_prompt": "Develop a 5 years plan to conduct a comprehensive study on the impact of climate change on marine biodiversity in the pacific ocean",
+    "short_horizon": "1 week",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 19,
+    "domain": "scientific research",
+    "core_task": "Conduct a comprehensive study on the effects of climate change on marine life in the Pacific Ocean",
+    "short_prompt": "Develop a 2 weeks plan to conduct a comprehensive study on the effects of climate change on marine life in the pacific ocean",
+    "long_prompt": "Develop a 3 years plan to conduct a comprehensive study on the effects of climate change on marine life in the pacific ocean",
+    "short_horizon": "2 weeks",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 20,
+    "domain": "personal projects",
+    "core_task": "Plan and host a city-wide food and culture festival.",
+    "short_prompt": "Develop a 3 days plan to plan and host a city-wide food and culture festival.",
+    "long_prompt": "Develop a 20 years plan to plan and host a city-wide food and culture festival.",
+    "short_horizon": "3 days",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 21,
+    "domain": "personal projects",
+    "core_task": "Renovate the kitchen and living room of your house",
+    "short_prompt": "Develop a 1 month plan to renovate the kitchen and living room of your house",
+    "long_prompt": "Develop a 10 years plan to renovate the kitchen and living room of your house",
+    "short_horizon": "1 month",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 22,
+    "domain": "personal projects",
+    "core_task": "Renovate the kitchen in your home with custom-designed features",
+    "short_prompt": "Develop a 1 month plan to renovate the kitchen in your home with custom-designed features",
+    "long_prompt": "Develop a 5 years plan to renovate the kitchen in your home with custom-designed features",
+    "short_horizon": "1 month",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 23,
+    "domain": "personal projects",
+    "core_task": "Renovate the entire house to incorporate smart home appliances and systems",
+    "short_prompt": "Develop a 1 week plan to renovate the entire house to incorporate smart home appliances and systems",
+    "long_prompt": "Develop a 3 years plan to renovate the entire house to incorporate smart home appliances and systems",
+    "short_horizon": "1 week",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 24,
+    "domain": "personal projects",
+    "core_task": "Write and publish a self-help book",
+    "short_prompt": "Develop a 3 days plan to write and publish a self-help book",
+    "long_prompt": "Develop a 5 years plan to write and publish a self-help book",
+    "short_horizon": "3 days",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 25,
+    "domain": "personal projects",
+    "core_task": "Renovate the entire house from the basement to the attic",
+    "short_prompt": "Develop a 3 days plan to renovate the entire house from the basement to the attic",
+    "long_prompt": "Develop a 5 years plan to renovate the entire house from the basement to the attic",
+    "short_horizon": "3 days",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 26,
+    "domain": "personal projects",
+    "core_task": "Plan and execute a complete home renovation project",
+    "short_prompt": "Develop a 1 month plan to plan and execute a complete home renovation project",
+    "long_prompt": "Develop a 3 years plan to plan and execute a complete home renovation project",
+    "short_horizon": "1 month",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 27,
+    "domain": "personal projects",
+    "core_task": "Renovate the entire second floor of the house",
+    "short_prompt": "Develop a 1 month plan to renovate the entire second floor of the house",
+    "long_prompt": "Develop a 20 years plan to renovate the entire second floor of the house",
+    "short_horizon": "1 month",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 28,
+    "domain": "personal projects",
+    "core_task": "Renovate the master bathroom with modern amenities and design",
+    "short_prompt": "Develop a 3 days plan to renovate the master bathroom with modern amenities and design",
+    "long_prompt": "Develop a 20 years plan to renovate the master bathroom with modern amenities and design",
+    "short_horizon": "3 days",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 29,
+    "domain": "personal projects",
+    "core_task": "Renovate the kitchen in an old house",
+    "short_prompt": "Develop a 1 week plan to renovate the kitchen in an old house",
+    "long_prompt": "Develop a 5 years plan to renovate the kitchen in an old house",
+    "short_horizon": "1 week",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 30,
+    "domain": "technical/engineering",
+    "core_task": "Design, develop, and implement an AI-based traffic management system for a metropolitan city",
+    "short_prompt": "Develop a 1 week plan to design, develop, and implement an ai-based traffic management system for a metropolitan city",
+    "long_prompt": "Develop a 5 years plan to design, develop, and implement an ai-based traffic management system for a metropolitan city",
+    "short_horizon": "1 week",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 31,
+    "domain": "technical/engineering",
+    "core_task": "Design and develop a new software program for optimizing warehouse logistics",
+    "short_prompt": "Develop a 2 weeks plan to design and develop a new software program for optimizing warehouse logistics",
+    "long_prompt": "Develop a 20 years plan to design and develop a new software program for optimizing warehouse logistics",
+    "short_horizon": "2 weeks",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 32,
+    "domain": "technical/engineering",
+    "core_task": "Design and construct an eco-friendly residential building with smart home features.",
+    "short_prompt": "Develop a 1 week plan to design and construct an eco-friendly residential building with smart home features.",
+    "long_prompt": "Develop a 5 years plan to design and construct an eco-friendly residential building with smart home features.",
+    "short_horizon": "1 week",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 33,
+    "domain": "technical/engineering",
+    "core_task": "Design and implement a wind energy farm for a coastal city",
+    "short_prompt": "Develop a 2 weeks plan to design and implement a wind energy farm for a coastal city",
+    "long_prompt": "Develop a 5 years plan to design and implement a wind energy farm for a coastal city",
+    "short_horizon": "2 weeks",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 34,
+    "domain": "technical/engineering",
+    "core_task": "Design and build a residential wind turbine system for renewable energy production",
+    "short_prompt": "Develop a 1 week plan to design and build a residential wind turbine system for renewable energy production",
+    "long_prompt": "Develop a 10 years plan to design and build a residential wind turbine system for renewable energy production",
+    "short_horizon": "1 week",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 35,
+    "domain": "technical/engineering",
+    "core_task": "Design and construct a state-of-the-art bridge to help alleviate traffic congestion in a growing city",
+    "short_prompt": "Develop a 2 weeks plan to design and construct a state-of-the-art bridge to help alleviate traffic congestion in a growing city",
+    "long_prompt": "Develop a 3 years plan to design and construct a state-of-the-art bridge to help alleviate traffic congestion in a growing city",
+    "short_horizon": "2 weeks",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 36,
+    "domain": "technical/engineering",
+    "core_task": "Design and construct a hydroelectric power plant",
+    "short_prompt": "Develop a 3 days plan to design and construct a hydroelectric power plant",
+    "long_prompt": "Develop a 3 years plan to design and construct a hydroelectric power plant",
+    "short_horizon": "3 days",
+    "long_horizon": "3 years"
+  },
+  {
+    "id": 37,
+    "domain": "technical/engineering",
+    "core_task": "Develop an innovative autonomous driving system for the upcoming electric car model",
+    "short_prompt": "Develop a 2 weeks plan to develop an innovative autonomous driving system for the upcoming electric car model",
+    "long_prompt": "Develop a 20 years plan to develop an innovative autonomous driving system for the upcoming electric car model",
+    "short_horizon": "2 weeks",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 38,
+    "domain": "technical/engineering",
+    "core_task": "Design and construct a solar power plant.",
+    "short_prompt": "Develop a 1 month plan to design and construct a solar power plant.",
+    "long_prompt": "Develop a 20 years plan to design and construct a solar power plant.",
+    "short_horizon": "1 month",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 39,
+    "domain": "technical/engineering",
+    "core_task": "Design and build a fully functional prototype for an autonomous electric vehicle",
+    "short_prompt": "Develop a 3 days plan to design and build a fully functional prototype for an autonomous electric vehicle",
+    "long_prompt": "Develop a 5 years plan to design and build a fully functional prototype for an autonomous electric vehicle",
+    "short_horizon": "3 days",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 40,
+    "domain": "creative/artistic",
+    "core_task": "Write and produce a full-length feature film.",
+    "short_prompt": "Develop a 2 weeks plan to write and produce a full-length feature film.",
+    "long_prompt": "Develop a 5 years plan to write and produce a full-length feature film.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 41,
+    "domain": "creative/artistic",
+    "core_task": "Complete a full-length novel and prepare it for publication",
+    "short_prompt": "Develop a 3 days plan to complete a full-length novel and prepare it for publication",
+    "long_prompt": "Develop a 5 years plan to complete a full-length novel and prepare it for publication",
+    "short_horizon": "3 days",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 42,
+    "domain": "creative/artistic",
+    "core_task": "Create and exhibit a mixed media installation art piece for a significant art event.",
+    "short_prompt": "Develop a 1 week plan to create and exhibit a mixed media installation art piece for a significant art event.",
+    "long_prompt": "Develop a 10 years plan to create and exhibit a mixed media installation art piece for a significant art event.",
+    "short_horizon": "1 week",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 43,
+    "domain": "creative/artistic",
+    "core_task": "Write and publish a full-length fantasy novel",
+    "short_prompt": "Develop a 3 days plan to write and publish a full-length fantasy novel",
+    "long_prompt": "Develop a 5 years plan to write and publish a full-length fantasy novel",
+    "short_horizon": "3 days",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 44,
+    "domain": "creative/artistic",
+    "core_task": "Design and curate an art exhibition to showcase local artists' works.",
+    "short_prompt": "Develop a 2 weeks plan to design and curate an art exhibition to showcase local artists' works.",
+    "long_prompt": "Develop a 5 years plan to design and curate an art exhibition to showcase local artists' works.",
+    "short_horizon": "2 weeks",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 45,
+    "domain": "creative/artistic",
+    "core_task": "Write and publish a biographical novel based on the life of a historical figure.",
+    "short_prompt": "Develop a 1 month plan to write and publish a biographical novel based on the life of a historical figure.",
+    "long_prompt": "Develop a 10 years plan to write and publish a biographical novel based on the life of a historical figure.",
+    "short_horizon": "1 month",
+    "long_horizon": "10 years"
+  },
+  {
+    "id": 46,
+    "domain": "creative/artistic",
+    "core_task": "Create an immersive art installation for a cultural event in the city.",
+    "short_prompt": "Develop a 1 week plan to create an immersive art installation for a cultural event in the city.",
+    "long_prompt": "Develop a 20 years plan to create an immersive art installation for a cultural event in the city.",
+    "short_horizon": "1 week",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 47,
+    "domain": "creative/artistic",
+    "core_task": "Write, illustrate, and publish a children's picture book",
+    "short_prompt": "Develop a 2 weeks plan to write, illustrate, and publish a children's picture book",
+    "long_prompt": "Develop a 20 years plan to write, illustrate, and publish a children's picture book",
+    "short_horizon": "2 weeks",
+    "long_horizon": "20 years"
+  },
+  {
+    "id": 48,
+    "domain": "creative/artistic",
+    "core_task": "Write, direct, and produce an original one-act play for the community theater",
+    "short_prompt": "Develop a 1 week plan to write, direct, and produce an original one-act play for the community theater",
+    "long_prompt": "Develop a 5 years plan to write, direct, and produce an original one-act play for the community theater",
+    "short_horizon": "1 week",
+    "long_horizon": "5 years"
+  },
+  {
+    "id": 49,
+    "domain": "creative/artistic",
+    "core_task": "Write and publish a collection of short stories.",
+    "short_prompt": "Develop a 3 days plan to write and publish a collection of short stories.",
+    "long_prompt": "Develop a 10 years plan to write and publish a collection of short stories.",
+    "short_horizon": "3 days",
+    "long_horizon": "10 years"
+  }
+]

@@ -1,0 +1,352 @@
+[
+  {
+    "id": 0,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Analyze the impact of different timescales on the process of biological evolution. Discuss both microevolutionary changes observable within a human lifetime and macroevolutionary phenomena beyond such temporal scale, including their respective influence on species diversity and ecosystem dynamics. focusing on the last few years",
+    "long_prompt": "Analyze Analyze the impact of different timescales on the process of biological evolution. Discuss both microevolutionary changes observable within a human lifetime and macroevolutionary phenomena beyond such temporal scale, including their respective influence on species diversity and ecosystem dynamics. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 1,
+    "context": "historical analysis",
+    "short_prompt": "Analyze Analyze the impact of technological advancements on social structures and economies at different timescales throughout history, comparing the rapid changes of the Industrial Revolution to the slower technological evolution of the Middle Ages. focusing on current decade",
+    "long_prompt": "Analyze Analyze the impact of technological advancements on social structures and economies at different timescales throughout history, comparing the rapid changes of the Industrial Revolution to the slower technological evolution of the Middle Ages. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 2,
+    "context": "geological processes",
+    "short_prompt": "Analyze Analyze how different geological processes such as plate tectonics, weathering, erosion, and sedimentation operate on varying temporal scales from thousands to millions of years, and how these different timescales influence the transformation and formation of Earth's crust. focusing on recent",
+    "long_prompt": "Analyze Analyze how different geological processes such as plate tectonics, weathering, erosion, and sedimentation operate on varying temporal scales from thousands to millions of years, and how these different timescales influence the transformation and formation of Earth's crust. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 3,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Explore and analyze the impacts of different timescales on the process of biological evolution, focusing on how short-term adaptation and long-term change can affect the genetic diversity within a species. How does the timescale affect the genetic adaptations seen in different organisms and how does this variability contribute to their overall survival and evolution? focusing on the last few years",
+    "long_prompt": "Analyze Explore and analyze the impacts of different timescales on the process of biological evolution, focusing on how short-term adaptation and long-term change can affect the genetic diversity within a species. How does the timescale affect the genetic adaptations seen in different organisms and how does this variability contribute to their overall survival and evolution? focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 4,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Analyze and discuss the process of biological evolution on different temporal scales, specifically considering how fast or slow processes, such as genetic mutations or species diversification, can impact an organism's adaptation to its environment over short term periods like decades and longer epochs spanning millions of years. focusing on current decade",
+    "long_prompt": "Analyze Analyze and discuss the process of biological evolution on different temporal scales, specifically considering how fast or slow processes, such as genetic mutations or species diversification, can impact an organism's adaptation to its environment over short term periods like decades and longer epochs spanning millions of years. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 5,
+    "context": "historical analysis",
+    "short_prompt": "Analyze Analyze how major political changes in the 15th century impacted cultural transformations in the 17th century, highlighting the period's temporal scales and considering various geographical areas and their specific contexts. focusing on current decade",
+    "long_prompt": "Analyze Analyze how major political changes in the 15th century impacted cultural transformations in the 17th century, highlighting the period's temporal scales and considering various geographical areas and their specific contexts. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 6,
+    "context": "geological processes",
+    "short_prompt": "Analyze Analyze the impact of both instant and prolonged geological processes, such as volcanic eruptions and plate tectonics, on the formation and transformation of Earth's crust over different timescales. focusing on recent",
+    "long_prompt": "Analyze Analyze the impact of both instant and prolonged geological processes, such as volcanic eruptions and plate tectonics, on the formation and transformation of Earth's crust over different timescales. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 7,
+    "context": "geological processes",
+    "short_prompt": "Analyze Analyze how geological processes such as erosion, sedimentation, and plate tectonics operate on multiple timescales, and outline how these variations in temporality can impact the broader understanding and interpretation of Earth's geological history. focusing on current decade",
+    "long_prompt": "Analyze Analyze how geological processes such as erosion, sedimentation, and plate tectonics operate on multiple timescales, and outline how these variations in temporality can impact the broader understanding and interpretation of Earth's geological history. focusing on throughout history",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 8,
+    "context": "technological development",
+    "short_prompt": "Analyze Analyze how the gradual progression of communication technologies, from the invention of the telegraph in the 19th century to the development of the internet in the late 20th century, demonstrates different temporal scales of technological advancement. Discuss the factors that have contributed to the pace of change in this realm. focusing on the last few years",
+    "long_prompt": "Analyze Analyze how the gradual progression of communication technologies, from the invention of the telegraph in the 19th century to the development of the internet in the late 20th century, demonstrates different temporal scales of technological advancement. Discuss the factors that have contributed to the pace of change in this realm. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 9,
+    "context": "historical analysis",
+    "short_prompt": "Analyze Analyze how the social and economic changes brought about by the Industrial Revolution played out in different timescales: immediate, short-term, and long-term, and discuss the ramifications of these scales of change on societal structures in different European nations. focusing on recent",
+    "long_prompt": "Analyze Analyze how the social and economic changes brought about by the Industrial Revolution played out in different timescales: immediate, short-term, and long-term, and discuss the ramifications of these scales of change on societal structures in different European nations. focusing on throughout history",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 10,
+    "context": "cultural trends",
+    "short_prompt": "Analyze Analyzing the Shifts in Cultural Acceptance of Same-Sex Relationships Over Different Timescales focusing on current decade",
+    "long_prompt": "Analyze Analyzing the Shifts in Cultural Acceptance of Same-Sex Relationships Over Different Timescales focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 11,
+    "context": "historical analysis",
+    "short_prompt": "Analyze Compare and contrast the short-term and long-term cultural effects of the Industrial Revolution on the working class in 19th century England. Analyze the immediate changes in working conditions and lifestyle during the early phase of the revolution and the cumulative socio-cultural impacts that became evident in the latter part of the century. focusing on recent",
+    "long_prompt": "Analyze Compare and contrast the short-term and long-term cultural effects of the Industrial Revolution on the working class in 19th century England. Analyze the immediate changes in working conditions and lifestyle during the early phase of the revolution and the cumulative socio-cultural impacts that became evident in the latter part of the century. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 12,
+    "context": "geological processes",
+    "short_prompt": "Analyze Analyze the interconnectedness of geological processes like erosion, sedimentation, and plate tectonics across different temporal scales ranging from daily to geological timescales. Discuss how these processes vary, accelerate, or reduce over these different scales and the potential impacts these variations have on the formation of Earth's landscapes. focusing on recent",
+    "long_prompt": "Analyze Analyze the interconnectedness of geological processes like erosion, sedimentation, and plate tectonics across different temporal scales ranging from daily to geological timescales. Discuss how these processes vary, accelerate, or reduce over these different scales and the potential impacts these variations have on the formation of Earth's landscapes. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 13,
+    "context": "historical analysis",
+    "short_prompt": "Analyze Analyze the impacts of the technological advancements over the last century by comparing two distinct timescales, the early 20th century and the turn towards the 21st century. Discuss how these advances have influenced social, economic, and cultural changes in society, keeping in mind the shifting contexts and environments without discussing future predictions or plans. focusing on the last few years",
+    "long_prompt": "Analyze Analyze the impacts of the technological advancements over the last century by comparing two distinct timescales, the early 20th century and the turn towards the 21st century. Discuss how these advances have influenced social, economic, and cultural changes in society, keeping in mind the shifting contexts and environments without discussing future predictions or plans. focusing on throughout history",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 14,
+    "context": "geological processes",
+    "short_prompt": "Analyze Describe and compare the geological processes such as erosion, sedimentation, and plate tectonics that occur on varying timescales from thousands to millions of years. What impacts do differing timescales have on the observable effects and significance of these processes? focusing on the last few years",
+    "long_prompt": "Analyze Describe and compare the geological processes such as erosion, sedimentation, and plate tectonics that occur on varying timescales from thousands to millions of years. What impacts do differing timescales have on the observable effects and significance of these processes? focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 15,
+    "context": "historical analysis",
+    "short_prompt": "Analyze Analyze how the transformation of Ancient Rome from Republic to Empire was perceived, understood, and adapted to on different timescales; short-term reaction of the contemporaries versus long-term perspective seen centuries later in historical accounts. Discuss the nuances these different temporal perspectives bring in understanding societal or political changes. focusing on the last few years",
+    "long_prompt": "Analyze Analyze how the transformation of Ancient Rome from Republic to Empire was perceived, understood, and adapted to on different timescales; short-term reaction of the contemporaries versus long-term perspective seen centuries later in historical accounts. Discuss the nuances these different temporal perspectives bring in understanding societal or political changes. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 16,
+    "context": "cultural trends",
+    "short_prompt": "Analyze Analyze the evolution of global fashion trends from the 1920s to the 2000s, observing patterns and shifts across different temporal scales. Discuss the social, political, and economic factors that have influenced these cultural trends. focusing on the last few years",
+    "long_prompt": "Analyze Analyze the evolution of global fashion trends from the 1920s to the 2000s, observing patterns and shifts across different temporal scales. Discuss the social, political, and economic factors that have influenced these cultural trends. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 17,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Analyze the role of different timescales in understanding the process of biological evolution, considering aspects from short term adaptation and survival traits to long-term species divergence and extinction. focusing on recent",
+    "long_prompt": "Analyze Analyze the role of different timescales in understanding the process of biological evolution, considering aspects from short term adaptation and survival traits to long-term species divergence and extinction. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 18,
+    "context": "geological processes",
+    "short_prompt": "Analyze Explore how different geological processes such as mountain building, erosion, and plate tectonics operate on varying timescales, demonstrating the complex interplay between these processes and their impact on Earth's topography and structure. focusing on recent",
+    "long_prompt": "Analyze Explore how different geological processes such as mountain building, erosion, and plate tectonics operate on varying timescales, demonstrating the complex interplay between these processes and their impact on Earth's topography and structure. focusing on throughout history",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 19,
+    "context": "geological processes",
+    "short_prompt": "Analyze Analyze and compare the impact of rapid-onset geological processes like volcanic eruptions or earthquakes with slow-onset processes such as weathering and erosion. How do these processes, unfolding over vastly different temporal scales, influence the Earth's surface and contribute to the overall landscape transformation? focusing on the last few years",
+    "long_prompt": "Analyze Analyze and compare the impact of rapid-onset geological processes like volcanic eruptions or earthquakes with slow-onset processes such as weathering and erosion. How do these processes, unfolding over vastly different temporal scales, influence the Earth's surface and contribute to the overall landscape transformation? focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 20,
+    "context": "historical analysis",
+    "short_prompt": "Analyze Analyze how the shifts in ruling dynasties in ancient Egypt influenced socio-cultural norms. Consider both short-term changes generated by immediate succession events, and long-term transformations arising from entire epochs. How do these varying temporal scales interact within the broader narrative of Egyptian history? focusing on current decade",
+    "long_prompt": "Analyze Analyze how the shifts in ruling dynasties in ancient Egypt influenced socio-cultural norms. Consider both short-term changes generated by immediate succession events, and long-term transformations arising from entire epochs. How do these varying temporal scales interact within the broader narrative of Egyptian history? focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 21,
+    "context": "technological development",
+    "short_prompt": "Analyze Analyze the impact and adoption rate of significant digital innovations such as the internet, smartphones, and artificial intelligence across different temporal scales. Discuss how different societies and cultures have adjusted to these rapid technological changes over time. focusing on the last few years",
+    "long_prompt": "Analyze Analyze the impact and adoption rate of significant digital innovations such as the internet, smartphones, and artificial intelligence across different temporal scales. Discuss how different societies and cultures have adjusted to these rapid technological changes over time. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 22,
+    "context": "technological development",
+    "short_prompt": "Analyze Compare and contrast the development of the printing press and the internet, taking into account the different timescales in which these technologies evolved and their impact on society during their respective periods. focusing on the last few years",
+    "long_prompt": "Analyze Compare and contrast the development of the printing press and the internet, taking into account the different timescales in which these technologies evolved and their impact on society during their respective periods. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 23,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Analyze the role of different timescales in understanding the biological evolution of species. Specifically, discuss how both rapid adaptations, occurring in small timescales (like the evolution of antibiotic resistance in bacteria), and massive evolutionary changes, happening over geological timescales (like the development of flight in birds), contribute to the complexity of biological diversity observed in nature. focusing on recent",
+    "long_prompt": "Analyze Analyze the role of different timescales in understanding the biological evolution of species. Specifically, discuss how both rapid adaptations, occurring in small timescales (like the evolution of antibiotic resistance in bacteria), and massive evolutionary changes, happening over geological timescales (like the development of flight in birds), contribute to the complexity of biological diversity observed in nature. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 24,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Compare and contrast the process of evolution on microevolutionary (short-term) and macroevolutionary (long-term) timescales. What observable changes occur within each? How does the timeframe impact the extent and permanence of these changes? focusing on current decade",
+    "long_prompt": "Analyze Compare and contrast the process of evolution on microevolutionary (short-term) and macroevolutionary (long-term) timescales. What observable changes occur within each? How does the timeframe impact the extent and permanence of these changes? focusing on throughout history",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 25,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Analyze the impact of different timescales on the process of biological evolution, exploring both microevolutionary changes that occur within a species over a few generations and macroevolutionary shifts observable in the fossil record over millions of years. focusing on recent",
+    "long_prompt": "Analyze Analyze the impact of different timescales on the process of biological evolution, exploring both microevolutionary changes that occur within a species over a few generations and macroevolutionary shifts observable in the fossil record over millions of years. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 26,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Analyse the patterns and mechanisms of biological evolution at different timescales - such as microevolution happening over decades or centuries and macroevolution taking place over millions of years. Compare the inherent complexities, fascinating differences, and interesting links between these two time scales, without considering planning or future actions. focusing on current decade",
+    "long_prompt": "Analyze Analyse the patterns and mechanisms of biological evolution at different timescales - such as microevolution happening over decades or centuries and macroevolution taking place over millions of years. Compare the inherent complexities, fascinating differences, and interesting links between these two time scales, without considering planning or future actions. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 27,
+    "context": "technological development",
+    "short_prompt": "Analyze Analyzing the Evolutionary Path of Communication Technology: An Exploration of Different Timescales focusing on recent",
+    "long_prompt": "Analyze Analyzing the Evolutionary Path of Communication Technology: An Exploration of Different Timescales focusing on throughout history",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 28,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Analyze how microscopic changes over short timescales can result in macroscopic evolutionary transformations in species over geological timescales, using the evolution of birds from theropod dinosaurs as an example. Discuss the interaction between short-term and long-term evolutionary processes and mechanisms without reference to future developments or strategic planning. focusing on current decade",
+    "long_prompt": "Analyze Analyze how microscopic changes over short timescales can result in macroscopic evolutionary transformations in species over geological timescales, using the evolution of birds from theropod dinosaurs as an example. Discuss the interaction between short-term and long-term evolutionary processes and mechanisms without reference to future developments or strategic planning. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 29,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Analyze the role of different timescales, from microevolutionary events over a few years to macroevolutionary processes across millennia, in shaping the biological evolution and diversity of species in different ecosystems. focusing on current decade",
+    "long_prompt": "Analyze Analyze the role of different timescales, from microevolutionary events over a few years to macroevolutionary processes across millennia, in shaping the biological evolution and diversity of species in different ecosystems. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 30,
+    "context": "historical analysis",
+    "short_prompt": "Analyze Compare and contrast the social, political, and economic changes across Europe during the Middle Ages, Renaissance, and Industrial Revolution focusing on different temporal scales. Analyze the continuity and change over periods within these eras. How does the understanding of these periods shift when viewed through varying lengths of temporal scales? focusing on the last few years",
+    "long_prompt": "Analyze Compare and contrast the social, political, and economic changes across Europe during the Middle Ages, Renaissance, and Industrial Revolution focusing on different temporal scales. Analyze the continuity and change over periods within these eras. How does the understanding of these periods shift when viewed through varying lengths of temporal scales? focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 31,
+    "context": "technological development",
+    "short_prompt": "Analyze Analyze the impact and implications of technological development from the industrial revolution to the present digital age, focusing on the transformative changes within different timescales. focusing on the last few years",
+    "long_prompt": "Analyze Analyze the impact and implications of technological development from the industrial revolution to the present digital age, focusing on the transformative changes within different timescales. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 32,
+    "context": "geological processes",
+    "short_prompt": "Analyze Compare and contrast the geological processes of earthquake generation and mountain formation, discussing how these processes unfold over different timescales. Explain how these temporal scales influence the observable characteristics of these geological phenomena. focusing on recent",
+    "long_prompt": "Analyze Compare and contrast the geological processes of earthquake generation and mountain formation, discussing how these processes unfold over different timescales. Explain how these temporal scales influence the observable characteristics of these geological phenomena. focusing on throughout history",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 33,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Analyze the role of different timescales in the phenomena of biological evolution, from the rapid changes observed in bacteria and viruses, to the slow, gradual alterations in mammals and plants over millions of years. Discuss how these varying timescales contribute to genetic diversity and species development, without referencing future planning or strategies. focusing on the last few years",
+    "long_prompt": "Analyze Analyze the role of different timescales in the phenomena of biological evolution, from the rapid changes observed in bacteria and viruses, to the slow, gradual alterations in mammals and plants over millions of years. Discuss how these varying timescales contribute to genetic diversity and species development, without referencing future planning or strategies. focusing on throughout history",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 34,
+    "context": "cultural trends",
+    "short_prompt": "Analyze Analyze the acceleration and deceleration of cultural trends between the mid-20th century and the early 21st century, comparing short-term fads, multi-decade socio-cultural shifts, and century-level transformations in societal values. focusing on current decade",
+    "long_prompt": "Analyze Analyze the acceleration and deceleration of cultural trends between the mid-20th century and the early 21st century, comparing short-term fads, multi-decade socio-cultural shifts, and century-level transformations in societal values. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 35,
+    "context": "cultural trends",
+    "short_prompt": "Analyze Analyze the effect of technology on cultural trends across different timescales, such as the rapid changes from the digital age compared to the slower evolution during the agricultural era. Discuss how these changes, despite occurring at different paces, have equally shaped society and individual behaviors. focusing on current decade",
+    "long_prompt": "Analyze Analyze the effect of technology on cultural trends across different timescales, such as the rapid changes from the digital age compared to the slower evolution during the agricultural era. Discuss how these changes, despite occurring at different paces, have equally shaped society and individual behaviors. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 36,
+    "context": "cultural trends",
+    "short_prompt": "Analyze Analyze how the cultural trends of individualism and collectivism have evolved over different timescales - daily, yearly, and generational, within both Western and Eastern societies. Avoid discussing specific events, focusing instead on broader socio-cultural shifts. focusing on current decade",
+    "long_prompt": "Analyze Analyze how the cultural trends of individualism and collectivism have evolved over different timescales - daily, yearly, and generational, within both Western and Eastern societies. Avoid discussing specific events, focusing instead on broader socio-cultural shifts. focusing on throughout history",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 37,
+    "context": "historical analysis",
+    "short_prompt": "Analyze Analyze the impact of the discovery of penicillin on societal health and wellbeing in the immediate post-discovery years (1930s-1940s), the subsequent decades (1950s-1990s), and the turn of the 21st century. How did medical, social, and economic contexts interact with this biological innovation across these different temporal scales? focusing on current decade",
+    "long_prompt": "Analyze Analyze the impact of the discovery of penicillin on societal health and wellbeing in the immediate post-discovery years (1930s-1940s), the subsequent decades (1950s-1990s), and the turn of the 21st century. How did medical, social, and economic contexts interact with this biological innovation across these different temporal scales? focusing on throughout history",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 38,
+    "context": "geological processes",
+    "short_prompt": "Analyze Analyze the interplay between slow and rapid geological processes such as plate tectonics, volcanic eruptions, and sedimentary deposition. Explain how these processes on different timescales can shape and transform the Earth's landscape. focusing on the last few years",
+    "long_prompt": "Analyze Analyze the interplay between slow and rapid geological processes such as plate tectonics, volcanic eruptions, and sedimentary deposition. Explain how these processes on different timescales can shape and transform the Earth's landscape. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 39,
+    "context": "cultural trends",
+    "short_prompt": "Analyze Analyze the evolution and impact of cultural trends in music across different timescales, from decades to centuries, highlighting the socio-political contexts that may have influenced these shifts. focusing on current decade",
+    "long_prompt": "Analyze Analyze the evolution and impact of cultural trends in music across different timescales, from decades to centuries, highlighting the socio-political contexts that may have influenced these shifts. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 40,
+    "context": "historical analysis",
+    "short_prompt": "Analyze Analyze the impact of industrialization on society, culture, and the environment in both the short term (17th to 18th Century) and the long term (18th Century to the present). Discuss the changes, adaptations, and repercussions within these temporal scales while controlling for geographical variations. focusing on the last few years",
+    "long_prompt": "Analyze Analyze the impact of industrialization on society, culture, and the environment in both the short term (17th to 18th Century) and the long term (18th Century to the present). Discuss the changes, adaptations, and repercussions within these temporal scales while controlling for geographical variations. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 41,
+    "context": "cultural trends",
+    "short_prompt": "Analyze Write an analytical essay comparing the evolution of cultural trends in fashion and music over short term (decades) and long term (centuries) timescales. Evaluate the factors that contribute to these changes and the impacts they have on society and individual identity. focusing on current decade",
+    "long_prompt": "Analyze Write an analytical essay comparing the evolution of cultural trends in fashion and music over short term (decades) and long term (centuries) timescales. Evaluate the factors that contribute to these changes and the impacts they have on society and individual identity. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 42,
+    "context": "geological processes",
+    "short_prompt": "Analyze Analyze the impact of various temporal scales on the understanding of geological processes such as tectonic movements, sedimentation, and erosion. Discuss how these processes take place over diverse timescales, from daily weathering effects to the million-year processes that have shaped Earth's continents and oceans. focusing on the last few years",
+    "long_prompt": "Analyze Analyze the impact of various temporal scales on the understanding of geological processes such as tectonic movements, sedimentation, and erosion. Discuss how these processes take place over diverse timescales, from daily weathering effects to the million-year processes that have shaped Earth's continents and oceans. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 43,
+    "context": "geological processes",
+    "short_prompt": "Analyze Examine how geological processes including tectonic movements, volcanic eruptions, and sedimentation can be understood on different temporal scales ranging from thousands to billions of years. Illustrate your discussion with examples showing this temporal variability and its implications on our understanding of the Earth's geology. focusing on current decade",
+    "long_prompt": "Analyze Examine how geological processes including tectonic movements, volcanic eruptions, and sedimentation can be understood on different temporal scales ranging from thousands to billions of years. Illustrate your discussion with examples showing this temporal variability and its implications on our understanding of the Earth's geology. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 44,
+    "context": "historical analysis",
+    "short_prompt": "Analyze Analyze the historical transformation of the concept of human rights and freedoms from the 17th Century Enlightenment era to the post-World War II period. Discuss how these shifts played out on different temporal scales such as the individual lifetime, generational shifts, and the centennial perspective. focusing on recent",
+    "long_prompt": "Analyze Analyze the historical transformation of the concept of human rights and freedoms from the 17th Century Enlightenment era to the post-World War II period. Discuss how these shifts played out on different temporal scales such as the individual lifetime, generational shifts, and the centennial perspective. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 45,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Analyze how biological evolution operates on different temporal scales, from quick adaptations on a microevolutionary timescale to the gradual changes observed over millions of years in macroevolution. Discuss the mechanisms and gene-environment interactions involved at both levels without speculating about future evolutionary trends. focusing on the last few years",
+    "long_prompt": "Analyze Analyze how biological evolution operates on different temporal scales, from quick adaptations on a microevolutionary timescale to the gradual changes observed over millions of years in macroevolution. Discuss the mechanisms and gene-environment interactions involved at both levels without speculating about future evolutionary trends. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 46,
+    "context": "cultural trends",
+    "short_prompt": "Analyze Compare and contrast the evolution of fashion trends during the Victorian era and the 21st century. How do the rates of change and adoption differ across these temporal scales, and what socioeconomic or technological factors influenced these trends? focusing on the last few years",
+    "long_prompt": "Analyze Compare and contrast the evolution of fashion trends during the Victorian era and the 21st century. How do the rates of change and adoption differ across these temporal scales, and what socioeconomic or technological factors influenced these trends? focusing on throughout history",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 47,
+    "context": "historical analysis",
+    "short_prompt": "Analyze Discuss how the parallel development of both the Ming Dynasty in China and the Italian Renaissance during the 15th century reflected not only the immediate socio-cultural contexts but also longer, civilizational shifts. Analyze how these events were influenced by and, in turn, influenced the longer-term trends in Eastern and Western worldviews, considering both the century-long and millennial timescales. focusing on recent",
+    "long_prompt": "Analyze Discuss how the parallel development of both the Ming Dynasty in China and the Italian Renaissance during the 15th century reflected not only the immediate socio-cultural contexts but also longer, civilizational shifts. Analyze how these events were influenced by and, in turn, influenced the longer-term trends in Eastern and Western worldviews, considering both the century-long and millennial timescales. focusing on throughout history",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 48,
+    "context": "geological processes",
+    "short_prompt": "Analyze Analyse and compare the effects of geological processes occurring at different timescales, such as the rapid movement associated with earthquakes and the gradual, slow pace of continental drift. focusing on current decade",
+    "long_prompt": "Analyze Analyse and compare the effects of geological processes occurring at different timescales, such as the rapid movement associated with earthquakes and the gradual, slow pace of continental drift. focusing on across millennia",
+    "type": "nonplanning_temporal"
+  },
+  {
+    "id": 49,
+    "context": "biological evolution",
+    "short_prompt": "Analyze Analyze how the concept of 'Deep Time' and the significant differences in timescales influence our understanding of biological evolution, specifically in context of the emergence of complex organisms, speciation, and global climate shifts. focusing on recent",
+    "long_prompt": "Analyze Analyze how the concept of 'Deep Time' and the significant differences in timescales influence our understanding of biological evolution, specifically in context of the emergence of complex organisms, speciation, and global climate shifts. focusing on over centuries",
+    "type": "nonplanning_temporal"
+  }
+]

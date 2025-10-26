@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "design": "2x2 crossed (Temporal \u00d7 Style)",
+    "factors": {
+      "temporal": [
+        "immediate",
+        "longterm"
+      ],
+      "style": [
+        "casual",
+        "formal"
+      ]
+    },
+    "n_prompts_per_cell": 10,
+    "total_prompts": 40,
+    "purpose": "Test if temporal steering is confounded by style"
+  },
+  "prompts": {
+    "immediate_casual": [
+      "Yo, housing crisis is crazy right now, what should mayor do asap?",
+      "Dude, these traffic jams are killing me. Quick fixes?",
+      "Man, our servers are down! What do we do RIGHT NOW?",
+      "This bug is breaking prod. How do we patch it today?",
+      "Energy prices going nuts this week. Immediate relief?",
+      "Our cash flow is terrible this month. Emergency moves?",
+      "Students are failing these tests. What works now?",
+      "Climate protests happening tomorrow. How do we respond?",
+      "Supply chain is broken. Fast solutions?",
+      "Investors are freaking out. How do we calm them down this quarter?"
+    ],
+    "immediate_formal": [
+      "The housing shortage requires urgent municipal intervention. What immediate measures should be implemented?",
+      "Traffic congestion has reached critical levels. What short-term interventions are recommended?",
+      "We are experiencing a critical system outage. What are the immediate remediation steps?",
+      "A production bug has been identified. What is the expedited resolution protocol?",
+      "Energy costs have increased substantially. What emergency relief measures should be deployed?",
+      "Cash flow has deteriorated significantly. What immediate financial actions are required?",
+      "Student performance metrics are declining. What interventions should be implemented this semester?",
+      "Climate protests are scheduled. What is the appropriate immediate response?",
+      "Supply chain disruption requires urgent attention. What near-term solutions exist?",
+      "Investor confidence has decreased. What quarterly stabilization measures are needed?"
+    ],
+    "longterm_casual": [
+      "How do we build cities our grandkids will actually want to live in?",
+      "What kind of transportation will people use in 50 years?",
+      "How should we design systems that last for decades?",
+      "What codebase architecture will serve us for years to come?",
+      "How do we create an energy future that's sustainable forever?",
+      "What business model works for the next generation?",
+      "How do we educate kids for jobs that don't exist yet?",
+      "What's the long-term plan for climate that actually works?",
+      "How do we build resilient supply chains for the future?",
+      "What company culture will thrive in 2050?"
+    ],
+    "longterm_formal": [
+      "What institutional frameworks ensure sustainable urban development for future generations?",
+      "What transportation infrastructure investments will serve society for the next half-century?",
+      "What architectural principles ensure long-term system resilience and adaptability?",
+      "What software engineering practices optimize for decadal maintainability?",
+      "What energy infrastructure enables sustainable transition across generations?",
+      "What organizational structures support multi-generational value creation?",
+      "What pedagogical frameworks prepare students for an uncertain future?",
+      "What policy mechanisms ensure climate resilience for future populations?",
+      "What supply chain designs optimize for long-term sustainability and adaptation?",
+      "What governance structures foster organizational longevity and evolution?"
+    ]
+  }
+}
