@@ -11,7 +11,7 @@ import sys
 
 # Add parent directory to path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from research.tools.utils import sync_to_bucket
+from tools.utils import sync_to_bucket
 
 
 def train_probes_all_layers(activations_file, results_file, prefix='sanity'):

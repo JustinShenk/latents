@@ -10,7 +10,7 @@ import sys
 
 # Add parent directory to path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from research.tools.utils import sync_to_bucket
+from tools.utils import sync_to_bucket
 
 
 def extract_activations_for_prompts(prompts_file, output_file, model_name="gpt2-small"):

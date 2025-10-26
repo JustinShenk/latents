@@ -17,8 +17,8 @@ echo ""
 echo "========================================"
 echo "Step 1/2: Extracting Activations"
 echo "========================================"
-python3 research/tools/extract_activations.py \
-    --prompts data/sanity_check_prompts.json \
+python3 tools/extract_activations.py \
+    --prompts data/experiments/sanity_check_prompts.json \
     --output activations/sanity_check.npz \
     --model gpt2-small
 
@@ -26,7 +26,7 @@ echo ""
 echo "========================================"
 echo "Step 2/2: Training Probes (Parallelized)"
 echo "========================================"
-python3 research/tools/train_probes.py \
+python3 tools/train_probes.py \
     --input activations/sanity_check.npz \
     --output results/sanity_check_results.csv \
     --prefix sanity
@@ -43,6 +43,5 @@ echo "To view results:"
 echo "  cat results/sanity_check_results.csv"
 echo ""
 echo "To download to local machine:"
-echo "  gsutil -m rsync -r ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/results/ results/"
-echo "  gsutil -m rsync -r ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/probes/ probes/"
+echo "  ./scripts/gcp_manager.sh download"
 echo ""
