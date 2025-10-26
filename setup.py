@@ -1,4 +1,4 @@
-"""Setup script for temporal-steering package."""
+"""Setup script for latents package."""
 
 from setuptools import setup, find_packages
 

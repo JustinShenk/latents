@@ -53,8 +53,8 @@ except ImportError:
     print("⚠️  plotly not available - will only generate static plots")
 
 # Use new plugin architecture
-from temporal_steering import SteeringFramework, TemporalSteeringVector
-from temporal_steering.extract_steering_vectors import extract_activations_with_hooks
+from latents import SteeringFramework, TemporalSteeringVector
+from latents.extract_steering_vectors import extract_activations_with_hooks
 
 
 # Dataset: 2×2 Design (Temporal × Style)

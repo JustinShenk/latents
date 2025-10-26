@@ -13,7 +13,7 @@ source venv_steering/bin/activate  # On Windows: venv_steering\Scripts\activate
 pip install -r requirements.txt
 
 # 2. Verify installation
-python -c "from temporal_steering import SteeringFramework; print('✓ Package imported')"
+python -c "from latents import SteeringFramework; print('✓ Package imported')"
 
 # 3. Run confound analysis experiment
 python research/experiments/confound_analysis.py
@@ -32,7 +32,7 @@ open research/results/pca_temporal_style_interactive.html  # macOS
 
 ```
 latents/
-├── temporal_steering/          # Main package (don't edit for experiments)
+├── latents/          # Main package (don't edit for experiments)
 │   ├── core/                   # Plugin architecture
 │   ├── dimensions/             # Built-in steering dimensions
 │   ├── extract_steering_vectors.py
@@ -97,7 +97,7 @@ python research/experiments/confound_analysis.py
 
 ```python
 # Pseudocode for experiment
-from temporal_steering import SteeringFramework
+from latents import SteeringFramework
 
 # Load deconfounded vectors
 framework = SteeringFramework.load(
@@ -168,7 +168,7 @@ python research/tools/extract_optimism_vectors.py \
 ### Test Steering Qualitatively
 
 ```python
-from temporal_steering import SteeringFramework
+from latents import SteeringFramework
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 model = GPT2LMHeadModel.from_pretrained('gpt2')
@@ -271,7 +271,7 @@ model = GPT2LMHeadModel.from_pretrained('gpt2')  # 124M params (smallest)
 - ✅ Use descriptive filenames: `confound_analysis_v2.py`, not `test.py`
 
 **DON'T**:
-- ❌ Edit files in `temporal_steering/` (core package)
+- ❌ Edit files in `latents/` (core package)
 - ❌ Commit large binary files (>10MB) without asking
 - ❌ Overwrite others' results files
 

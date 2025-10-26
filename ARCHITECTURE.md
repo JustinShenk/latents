@@ -403,7 +403,7 @@ Keep temporal steering as primary interface:
 
 ```python
 # Old API (still works)
-from temporal_steering import TemporalSteering
+from latents import TemporalSteering
 steering = TemporalSteering(model, tokenizer, vectors)
 
 # New API (more powerful)
@@ -441,7 +441,7 @@ framework = SteeringFramework.load_multiple(
 ### Option C: Keep `temporal-steering`, add namespace
 - **Pros**: Established identity
 - **Cons**: Doesn't reflect plugin architecture well
-- **Import**: `from temporal_steering.plugins import OptimismSteering`
+- **Import**: `from latents.plugins import OptimismSteering`
 
 **Recommendation: `horizon` (if available) or `horizon-llm`**
 

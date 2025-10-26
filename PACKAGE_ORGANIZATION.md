@@ -12,7 +12,7 @@ temporal-steering/
 ├── MANIFEST.in                           # Package data files
 ├── requirements.txt                      # Core dependencies
 │
-├── temporal_steering/                    # 📦 Main Package
+├── latents/                    # 📦 Main Package
 │   ├── __init__.py                      # Package exports (TemporalSteering)
 │   ├── cli.py                           # CLI commands
 │   ├── dataset.py                       # Dataset utilities
@@ -38,7 +38,7 @@ temporal-steering/
 │       ├── results_dashboard.html
 │       └── temporal_explorer.html
 │
-├── temporal_steering_demo.ipynb          # Full tutorial notebook
+├── latents_demo.ipynb          # Full tutorial notebook
 ├── temporal_steering_colab_demo.ipynb    # Quick interactive demo
 │
 └── research/                             # 🔬 Research Artifacts
@@ -62,7 +62,7 @@ temporal-steering/
 
 ## 📦 Package Contents
 
-### Core Package (`temporal_steering/`)
+### Core Package (`latents/`)
 **Purpose**: Production-ready steering implementation
 
 | File | Description | Public API |
@@ -106,7 +106,7 @@ temporal-steering/
 
 **Python API**:
 ```python
-from temporal_steering import TemporalSteering
+from latents import TemporalSteering
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 import json, numpy as np
 
@@ -163,7 +163,7 @@ This keeps the main package clean while preserving all research artifacts.
 **Package integrity**:
 ```bash
 # Test imports
-python -c "from temporal_steering import TemporalSteering; print('✓ Import works')"
+python -c "from latents import TemporalSteering; print('✓ Import works')"
 
 # Test CLI
 temporal-steering --help
@@ -185,7 +185,7 @@ python examples/quick_demo.py
 | `README.md` | Main documentation, installation, quick start |
 | `LICENSE` | MIT License |
 | `PACKAGE_ORGANIZATION.md` | This file - package structure |
-| `temporal_steering_demo.ipynb` | Full tutorial with extraction |
+| `latents_demo.ipynb` | Full tutorial with extraction |
 | `temporal_steering_colab_demo.ipynb` | Quick interactive demo |
 | `examples/quick_demo.py` | Python usage example |
 

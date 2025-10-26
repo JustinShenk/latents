@@ -31,7 +31,7 @@ def main():
     args = parser.parse_args()
 
     if args.command == "extract":
-        from temporal_steering.extract_steering_vectors import main as extract_main
+        from latents.extract_steering_vectors import main as extract_main
         import sys
         sys.argv = [
             "extract_steering_vectors.py",
@@ -46,11 +46,11 @@ def main():
         extract_main()
 
     elif args.command == "demo":
-        from temporal_steering.temporal_steering_demo import app, model, tokenizer, steering_system
+        from latents.temporal_steering_demo import app, model, tokenizer, steering_system
         import json
         from transformers import GPT2LMHeadModel, GPT2Tokenizer
         import numpy as np
-        from temporal_steering import TemporalSteering
+        from latents import TemporalSteering
 
         print("="*70)
         print("TEMPORAL STEERING DEMO")

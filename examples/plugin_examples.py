@@ -5,7 +5,7 @@ These demonstrate how to create custom steering dimensions
 using the plugin architecture.
 """
 
-from temporal_steering import SteeringVector, register_steering
+from latents import SteeringVector, register_steering
 from typing import Tuple
 
 
@@ -255,7 +255,7 @@ class FormalitySteering(SteeringVector):
 
 # Example usage and testing
 if __name__ == "__main__":
-    from temporal_steering import SteeringFramework, STEERING_REGISTRY
+    from latents import SteeringFramework, STEERING_REGISTRY
     from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
     print("=" * 70)
@@ -280,7 +280,7 @@ if __name__ == "__main__":
 
     print("To extract vectors for a plugin:")
     print()
-    print("  from temporal_steering.extract_steering_vectors import compute_steering_vectors")
+    print("  from latents.extract_steering_vectors import compute_steering_vectors")
     print("  from examples.plugin_examples import OptimismSteering")
     print()
     print("  # Load model")

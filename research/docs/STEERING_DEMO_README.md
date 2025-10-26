@@ -199,7 +199,7 @@ python3 src/temporal_steering_demo.py \
 Test steering systematically:
 
 ```python
-from temporal_steering_demo import TemporalSteering, load_steering_vectors
+from latents_demo import TemporalSteering, load_steering_vectors
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 

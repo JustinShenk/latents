@@ -39,7 +39,7 @@ temporal-steering extract \
 ### Method 2: Using Python Script
 
 ```bash
-python temporal_steering/extract_steering_vectors.py \
+python latents/extract_steering_vectors.py \
   --pairs data_download/test_prompts.json \
   --output steering_vectors/temporal_steering_new.json \
   --model gpt2 \
@@ -120,7 +120,7 @@ print(data['metadata'])
 
 The exact code used to generate these vectors is in this repository:
 
-- **File**: `temporal_steering/extract_steering_vectors.py`
+- **File**: `latents/extract_steering_vectors.py`
 - **Commit**: Initial release (check git log for exact hash)
 - **Command**: See `metadata.generation_info.command` in the JSON file
 

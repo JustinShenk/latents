@@ -4,7 +4,7 @@ import json
 import numpy as np
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
-from temporal_steering import TemporalSteering
+from latents import TemporalSteering
 
 
 def load_steering_vectors(path):

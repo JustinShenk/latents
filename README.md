@@ -2,7 +2,7 @@
 
 A flexible framework for steering language models along multiple behavioral dimensions using Contrastive Activation Addition (CAA).
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JustinShenk/latents/blob/main/temporal_steering_demo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JustinShenk/latents/blob/main/latents_demo.ipynb)
 
 ## 🌐 Live Demos & Results
 
@@ -34,7 +34,7 @@ pip install -e .
 ### Basic Usage
 
 ```python
-from temporal_steering import SteeringFramework
+from latents import SteeringFramework
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 # Load model
@@ -73,10 +73,10 @@ result = framework.generate(
 
 ### Core Components
 
-- **`temporal_steering/core/`**: Plugin architecture and framework
-- **`temporal_steering/dimensions/`**: Built-in steering dimensions
-- **`temporal_steering/model_adapter.py`**: Multi-model support layer
-- **`temporal_steering/extract_steering_vectors.py`**: Vector extraction utilities
+- **`latents/core/`**: Plugin architecture and framework
+- **`latents/dimensions/`**: Built-in steering dimensions
+- **`latents/model_adapter.py`**: Multi-model support layer
+- **`latents/extract_steering_vectors.py`**: Vector extraction utilities
 
 ### Pre-trained Steering Vectors
 
@@ -98,7 +98,7 @@ Located in `research/`:
 Create custom steering dimensions:
 
 ```python
-from temporal_steering.core import SteeringVector, register_steering
+from latents.core import SteeringVector, register_steering
 from typing import Tuple
 
 @register_steering("optimism")
@@ -129,7 +129,7 @@ See [PLUGIN_GUIDE.md](PLUGIN_GUIDE.md) for detailed instructions.
 Extract vectors from your own prompt pairs:
 
 ```python
-from temporal_steering.extract_steering_vectors import (
+from latents.extract_steering_vectors import (
     compute_steering_vectors,
     save_steering_vectors
 )
@@ -235,12 +235,12 @@ Supported architectures:
 Launch the web interface:
 
 ```bash
-python temporal_steering/temporal_steering_demo.py \
+python latents/latents_demo.py \
   --steering steering_vectors/temporal_steering.json \
   --port 8080
 ```
 
-Or try the [Colab notebook](https://colab.research.google.com/github/JustinShenk/latents/blob/main/temporal_steering_demo.ipynb).
+Or try the [Colab notebook](https://colab.research.google.com/github/JustinShenk/latents/blob/main/latents_demo.ipynb).
 
 ## 📊 Example Outputs
 

@@ -331,7 +331,7 @@ open http://localhost:5000
 ### Programmatic Use
 
 ```python
-from temporal_steering_demo import TemporalSteering, load_steering_vectors
+from latents_demo import TemporalSteering, load_steering_vectors
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 # Load

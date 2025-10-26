@@ -8,10 +8,10 @@ Successfully transformed the package from a temporal-steering-only library into 
 
 ### 1. Core Architecture
 
-Created a plugin system in `temporal_steering/core/`:
+Created a plugin system in `latents/core/`:
 
 ```
-temporal_steering/
+latents/
 ├── core/
 │   ├── __init__.py
 │   ├── steering_vector.py    # Base class for all dimensions
@@ -72,12 +72,12 @@ result = framework.generate(
 Old API still works:
 ```python
 # Old way (still supported)
-from temporal_steering import TemporalSteering
+from latents import TemporalSteering
 steering = TemporalSteering(model, tokenizer, vectors)
 result = steering.generate_with_steering(prompt, steering_strength=0.8)
 
 # New way (more powerful)
-from temporal_steering import SteeringFramework
+from latents import SteeringFramework
 framework = SteeringFramework.load(model, tokenizer, "temporal_scope")
 result = framework.generate(prompt, steerings=[("temporal_scope", 0.8)])
 ```
@@ -93,7 +93,7 @@ Created 4 example plugins in `examples/plugin_examples.py`:
 
 All registered automatically:
 ```python
-from temporal_steering import STEERING_REGISTRY
+from latents import STEERING_REGISTRY
 print(STEERING_REGISTRY.keys())
 # ['temporal_scope', 'optimism', 'technical_detail', 'abstractness', 'formality']
 ```
@@ -273,25 +273,25 @@ from horizon import TemporalSteeringVector, SteeringFramework
 ## Files Created/Modified
 
 ### New Files
-- `temporal_steering/core/__init__.py`
-- `temporal_steering/core/steering_vector.py`
-- `temporal_steering/core/registry.py`
-- `temporal_steering/core/framework.py`
-- `temporal_steering/dimensions/__init__.py`
-- `temporal_steering/dimensions/temporal.py`
+- `latents/core/__init__.py`
+- `latents/core/steering_vector.py`
+- `latents/core/registry.py`
+- `latents/core/framework.py`
+- `latents/dimensions/__init__.py`
+- `latents/dimensions/temporal.py`
 - `examples/plugin_examples.py`
 - `ARCHITECTURE.md`
 - `PLUGIN_GUIDE.md`
 - `PLUGIN_ARCHITECTURE_SUMMARY.md` (this file)
 
 ### Modified Files
-- `temporal_steering/__init__.py` (added new exports)
-- `steering_vectors/temporal_scope.json` (copied from temporal_steering.json)
+- `latents/__init__.py` (added new exports)
+- `steering_vectors/temporal_scope.json` (copied from latents.json)
 
 ### Unchanged (Backward Compatibility)
-- `temporal_steering/temporal_steering_demo.py` (old TemporalSteering class)
-- `temporal_steering/extract_steering_vectors.py`
-- `temporal_steering/model_adapter.py`
+- `latents/latents_demo.py` (old TemporalSteering class)
+- `latents/extract_steering_vectors.py`
+- `latents/model_adapter.py`
 - All existing examples and demos
 
 ## Conclusion

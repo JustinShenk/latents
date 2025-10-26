@@ -13,8 +13,8 @@ len(model.transformer.h)                # Number of layers
 ```
 
 **Files affected:**
-- `temporal_steering/temporal_steering_demo.py` (2 occurrences)
-- `temporal_steering/extract_steering_vectors.py` (3 occurrences)
+- `latents/latents_demo.py` (2 occurrences)
+- `latents/extract_steering_vectors.py` (3 occurrences)
 
 ### Model Architecture Differences
 
@@ -33,7 +33,7 @@ len(model.transformer.h)                # Number of layers
 Create a simple adapter to detect and access layers for any model:
 
 ```python
-# temporal_steering/model_adapter.py
+# latents/model_adapter.py
 
 def get_model_layers(model):
     """Get transformer layers for any model architecture."""

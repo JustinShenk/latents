@@ -8,7 +8,7 @@ Create your own steering dimensions for the Horizon framework.
 
 ```python
 # my_plugin.py
-from temporal_steering import SteeringVector, register_steering
+from latents import SteeringVector, register_steering
 
 @register_steering("optimism")
 class OptimismSteering(SteeringVector):
@@ -52,7 +52,7 @@ class OptimismSteering(SteeringVector):
 ### 3. Extract Steering Vectors
 
 ```python
-from temporal_steering import extract_steering_vectors
+from latents import extract_steering_vectors
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 model = GPT2LMHeadModel.from_pretrained('gpt2')
@@ -76,7 +76,7 @@ optimism_steering.save_vectors('steering_vectors/optimism.json')
 ### 4. Use Your Plugin
 
 ```python
-from temporal_steering import SteeringFramework
+from latents import SteeringFramework
 
 framework = SteeringFramework.load(
     model, tokenizer,
@@ -340,7 +340,7 @@ class AbstractnessSteering(SteeringVector):
 ```python
 # test_my_plugin.py
 def test_plugin():
-    from temporal_steering import SteeringFramework, STEERING_REGISTRY
+    from latents import SteeringFramework, STEERING_REGISTRY
     from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
     # Check registration
@@ -412,7 +412,7 @@ pip install temporal-steering-plugin-optimism
 Auto-discovered by the framework:
 
 ```python
-from temporal_steering import SteeringFramework
+from latents import SteeringFramework
 
 framework.list_available_dimensions()
 # ['temporal_scope', 'optimism', ...]

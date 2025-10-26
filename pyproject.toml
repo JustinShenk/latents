@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "temporal-steering"
+name = "latents"
 version = "0.1.0"
-description = "Steer GPT-2's temporal scope using Contrastive Activation Addition"
+description = "Multi-dimensional LLM steering using Contrastive Activation Addition"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
@@ -42,16 +42,16 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/justinshenk/temporal-steering"
-Repository = "https://github.com/justinshenk/temporal-steering"
+Homepage = "https://github.com/justinshenk/latents"
+Repository = "https://github.com/justinshenk/latents"
 
 [project.scripts]
-temporal-steering = "temporal_steering.cli:main"
+latents = "latents.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["temporal_steering*"]
+include = ["latents*"]
 exclude = ["tests*", "venv*", "data*", "activations*", "probes*", "results*"]
 
 [tool.setuptools.package-data]
-temporal_steering = ["templates/*.html", "steering_vectors/*.json"]
+latents = ["templates/*.html", "steering_vectors/*.json"]
