@@ -1,143 +1,300 @@
-# Latents Visualizations - Vercel Deployment
+# Latents: Multi-Dimensional LLM Steering
 
-This directory contains the static site deployed to Vercel, showcasing interactive research visualizations and example dashboards.
+A flexible framework for steering language models along multiple behavioral dimensions using Contrastive Activation Addition (CAA).
 
-## Structure
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JustinShenk/latents/blob/main/temporal_steering_demo.ipynb)
 
-```
-public/
-├── index.html              # Landing page
-├── research/               # Research experiment visualizations
-│   └── confound-analysis.html
-└── examples/               # Example demonstrations
-    ├── interactive-sandbox.html
-    ├── complete-results.html
-    ├── results-dashboard.html
-    └── temporal-explorer.html
-```
+## 🌐 Live Demos & Results
 
-## Deployment
+Interactive visualizations: [latents.vercel.app](https://latents.vercel.app)
 
-### Deploy to Vercel
+## Features
 
-1. **Install Vercel CLI**:
-   ```bash
-   npm install -g vercel
-   ```
+- **Plugin Architecture**: Extensible framework for custom steering dimensions
+- **Multi-Model Support**: Works with GPT-2, LLaMA, Mistral, Falcon, and more
+- **Temporal Scope Steering**: Flagship dimension (immediate ↔ long-term thinking)
+- **Multi-Dimensional Composition**: Combine multiple steering dimensions simultaneously
+- **Research Tools**: PCA analysis, confound testing, human evaluation utilities
+- **Interactive Demos**: Web UI and Jupyter notebooks
 
-2. **Deploy**:
-   ```bash
-   # From project root
-   vercel deploy
+## 🚀 Quick Start
 
-   # For production
-   vercel deploy --prod
-   ```
-
-3. **Link to GitHub** (recommended):
-   - Connect your GitHub repository in Vercel dashboard
-   - Automatic deployments on push to main branch
-
-### Manual Deployment
-
-If you prefer to use the Vercel web interface:
-1. Go to [vercel.com](https://vercel.com)
-2. Import your GitHub repository
-3. Vercel will auto-detect the configuration from `vercel.json`
-4. Deploy!
-
-## Adding New Visualizations
-
-When you generate new Plotly visualizations:
+### Installation
 
 ```bash
-# Copy research results
-cp research/results/your_new_plot.html public/research/your-new-plot.html
+# From GitHub
+pip install git+https://github.com/JustinShenk/latents.git
 
-# Copy examples
-cp examples/visualizations/your_example.html public/examples/your-example.html
-
-# Update index.html to add links to new visualizations
-# Then commit and push (auto-deploys if linked to GitHub)
+# Or clone for development
+git clone https://github.com/JustinShenk/latents.git
+cd latents
+pip install -e .
 ```
 
-Or use the update script:
+### Basic Usage
+
+```python
+from temporal_steering import SteeringFramework
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+
+# Load model
+model = GPT2LMHeadModel.from_pretrained('gpt2')
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+tokenizer.pad_token = tokenizer.eos_token
+
+# Load steering framework with temporal dimension
+framework = SteeringFramework.load(model, tokenizer, 'temporal_scope')
+
+# Generate with long-term steering
+result = framework.generate(
+    prompt="How should we address climate change?",
+    steerings=[('temporal_scope', 0.8)],  # +1.0 = long-term, -1.0 = immediate
+    temperature=0.7,
+    max_length=100
+)
+print(result)
+```
+
+### Multi-Dimensional Steering
+
+```python
+# Combine multiple dimensions
+result = framework.generate(
+    prompt="How should we address climate change?",
+    steerings=[
+        ('temporal_scope', 0.8),    # Long-term thinking
+        ('formality', 0.5),         # Moderately formal (if available)
+    ],
+    temperature=0.7
+)
+```
+
+## 📦 What's Inside
+
+### Core Components
+
+- **`temporal_steering/core/`**: Plugin architecture and framework
+- **`temporal_steering/dimensions/`**: Built-in steering dimensions
+- **`temporal_steering/model_adapter.py`**: Multi-model support layer
+- **`temporal_steering/extract_steering_vectors.py`**: Vector extraction utilities
+
+### Pre-trained Steering Vectors
+
+Located in `steering_vectors/`:
+- `temporal_scope.json` - Original temporal steering
+- `temporal_scope_gpt2.json` - GPT-2 specific vectors
+- `temporal_scope_deconfounded.json` - Style-controlled vectors
+
+### Research & Experiments
+
+Located in `research/`:
+- **`experiments/`**: Confound analysis and validation studies
+- **`datasets/`**: Experimental prompts and control datasets
+- **`results/`**: Analysis outputs, PCA plots, evaluation metrics
+- **`tools/`**: Analysis utilities (activation extraction, probe training)
+
+## 🔌 Plugin System
+
+Create custom steering dimensions:
+
+```python
+from temporal_steering.core import SteeringVector, register_steering
+from typing import Tuple
+
+@register_steering("optimism")
+class OptimismSteering(SteeringVector):
+    def get_dimension_name(self) -> str:
+        return "optimism"
+
+    def get_strength_range(self) -> Tuple[float, float]:
+        return (-1.0, 1.0)
+
+    def interpret_strength(self, strength: float) -> str:
+        if strength <= -0.75:
+            return "very pessimistic/defensive"
+        elif strength <= -0.25:
+            return "cautiously pessimistic"
+        elif strength <= 0.25:
+            return "balanced/realistic"
+        elif strength <= 0.75:
+            return "cautiously optimistic"
+        else:
+            return "very optimistic/ambitious"
+```
+
+See [PLUGIN_GUIDE.md](PLUGIN_GUIDE.md) for detailed instructions.
+
+## 🧪 Extracting Steering Vectors
+
+Extract vectors from your own prompt pairs:
+
+```python
+from temporal_steering.extract_steering_vectors import (
+    compute_steering_vectors,
+    save_steering_vectors
+)
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+
+model = GPT2LMHeadModel.from_pretrained('gpt2')
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+
+# Prompt pairs: [{"positive": "...", "negative": "..."}]
+prompt_pairs = [
+    {
+        "positive": "Considering long-term consequences over the next 50 years...",
+        "negative": "We need immediate action within the next few days..."
+    },
+    # ... more pairs
+]
+
+# Extract vectors
+steering_vectors = compute_steering_vectors(
+    model,
+    tokenizer,
+    prompt_pairs,
+    layers=None  # Extract from all layers
+)
+
+# Save for later use
+save_steering_vectors(steering_vectors, 'my_steering.json')
+```
+
+## 🎯 How It Works
+
+**Contrastive Activation Addition (CAA)**:
+
+1. Extract activations from contrastive prompt pairs (e.g., immediate vs. long-term)
+2. Compute steering vectors: `positive_activations - negative_activations`
+3. During generation, add scaled steering vectors to model activations
+
+The plugin architecture allows you to:
+- Define custom behavioral dimensions
+- Combine multiple dimensions
+- Control interpretation of steering strengths
+- Support any transformer architecture
+
+## 🔬 For Researchers
+
+### Getting Started
+
+See [RESEARCHER_ONBOARDING.md](RESEARCHER_ONBOARDING.md) for:
+- 10-minute quick start guide
+- Running confound analysis experiments
+- Contributing new experiments
+- Dataset expansion guidelines
+- Code review checklist
+
+### Current Research Focus
+
+**Issue #1**: Verify temporal steering not confounded by style ([research/ISSUES.md](research/ISSUES.md))
+- Initial PCA analysis suggests some separation between dimensions
+- Further validation needed: larger dataset, behavioral studies, multi-model testing
+
+### Running Experiments
 
 ```bash
-./scripts/update-visualizations.sh
+# Confound analysis (2×2: temporal × style)
+python research/experiments/confound_analysis.py
+
+# View interactive results
+open research/results/pca_temporal_style_interactive.html
 ```
 
-## Configuration
+## 📚 Documentation
 
-### vercel.json
+- **[ARCHITECTURE.md](ARCHITECTURE.md)**: Plugin system design
+- **[PLUGIN_GUIDE.md](PLUGIN_GUIDE.md)**: Create custom dimensions
+- **[SCALING_AND_USAGE.md](SCALING_AND_USAGE.md)**: Multi-model support
+- **[PACKAGE_NAMING_STRATEGY.md](PACKAGE_NAMING_STRATEGY.md)**: Naming decisions
+- **[research/ISSUES.md](research/ISSUES.md)**: Open research questions
 
-- Configures static file serving from `public/` directory
-- Sets security headers
-- Configures caching (1 hour for HTML files)
+## 🚀 Multi-Model Support
 
-### .vercelignore
+Works with any transformer architecture:
 
-- Excludes Python code, data files, and large binary files
-- Only deploys the `public/` directory
-- Keeps deployment size minimal
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
-## Environment Variables
+# LLaMA example
+model = AutoModelForCausalLM.from_pretrained('meta-llama/Llama-2-7b-hf')
+tokenizer = AutoTokenizer.from_pretrained('meta-llama/Llama-2-7b-hf')
 
-No environment variables needed - this is a static site deployment.
+framework = SteeringFramework.load(model, tokenizer, 'temporal_scope')
+# Works the same way!
+```
 
-## Custom Domain
+Supported architectures:
+- GPT-2, GPT-Neo, GPT-J
+- LLaMA, Llama-2, Llama-3
+- Mistral, Mixtral
+- Falcon, BLOOM, OPT
+- And more...
 
-To add a custom domain:
-1. Go to Vercel dashboard → Your Project → Settings → Domains
-2. Add your domain (e.g., `results.latents.ai`)
-3. Update DNS records as instructed
+## 🌐 Interactive Demo
 
-## Analytics
-
-Vercel provides built-in analytics:
-- Enable in Project Settings → Analytics
-- Track page views, performance, and visitor metrics
-
-## Updating Content
-
-### Automatic (GitHub Integration)
-
-When linked to GitHub, every push to `main` triggers a deployment:
+Launch the web interface:
 
 ```bash
-# Generate new visualization
-python research/experiments/new_experiment.py
-
-# Copy to public/
-cp research/results/new_viz.html public/research/
-
-# Update index.html with link
-# ... edit public/index.html ...
-
-# Commit and push
-git add public/
-git commit -m "Add new visualization: new_viz"
-git push origin main
-
-# Vercel automatically deploys!
+python temporal_steering/temporal_steering_demo.py \
+  --steering steering_vectors/temporal_steering.json \
+  --port 8080
 ```
 
-### Manual
+Or try the [Colab notebook](https://colab.research.google.com/github/JustinShenk/latents/blob/main/temporal_steering_demo.ipynb).
 
-```bash
-vercel deploy --prod
+## 📊 Example Outputs
+
+**Prompt**: "What should policymakers prioritize to address climate change?"
+
+**Immediate Steering (-0.8)**:
+> "Implement immediate carbon pricing, ban single-use plastics now, emergency subsidies for renewable energy this quarter..."
+
+**Long-term Steering (+0.8)**:
+> "Establish institutional frameworks for intergenerational equity, invest in fundamental research for breakthrough technologies, create policy mechanisms that adapt over decades..."
+
+Note: These examples illustrate typical patterns observed during development. Results may vary based on model, prompt, and steering strength.
+
+## 🛣️ Roadmap
+
+- [ ] PyPI package release
+- [ ] Additional pre-trained dimensions (formality, technicality, abstractness)
+- [ ] Multi-model benchmark suite
+- [ ] Automated confound detection
+- [ ] Integration with steering-vectors ecosystem
+
+## 📖 Citation
+
+If you use this framework in your research, please cite:
+
+```bibtex
+@software{latents2025,
+  author = {Shenk, Justin},
+  title = {Latents: Multi-Dimensional LLM Steering},
+  year = {2025},
+  url = {https://github.com/JustinShenk/latents}
+}
 ```
 
-## Access
+## 🙏 Acknowledgments
 
-After deployment, your site will be available at:
-- Development: `https://latents-<random>.vercel.app`
-- Production: `https://latents.vercel.app` (or your custom domain)
+- Based on [Contrastive Activation Addition](https://www.alignmentforum.org/posts/v7f8ayBxLhmMFRzpa/steering-llama-2-with-contrastive-activation-additions) by Nina Rimsky
+- Inspired by [nrimsky/CAA](https://github.com/nrimsky/CAA)
 
-## Notes
+## 📄 License
 
-- All visualizations are self-contained HTML files (Plotly standalone)
-- No backend required - pure static hosting
-- Fast global CDN delivery via Vercel Edge Network
-- Automatic HTTPS
-- Preview deployments for pull requests
+MIT License - See [LICENSE](LICENSE) for details
+
+## 🤝 Contributing
+
+We welcome contributions! See [RESEARCHER_ONBOARDING.md](RESEARCHER_ONBOARDING.md) for:
+- Setting up your development environment
+- Running experiments
+- Code style guidelines
+- Pull request process
+
+For research questions, see [research/ISSUES.md](research/ISSUES.md).
+
+## 📬 Contact
+
+- **GitHub Issues**: [Report bugs or request features](https://github.com/JustinShenk/latents/issues)
+- **Maintainer**: [@JustinShenk](https://github.com/JustinShenk)
