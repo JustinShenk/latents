@@ -127,7 +127,7 @@ results/
 └── control_ablated_results.csv
 ```
 
-All automatically synced to: `gs://temporal-grounding-gpt2-82feb/`
+All automatically synced to: `${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/`
 
 ---
 
@@ -260,5 +260,5 @@ gcloud compute ssh temporal-gpt2-experiment --project=new-one-82feb --zone=us-ce
 ---
 
 **Last Updated**: 2025-10-25 22:00 UTC
-**Experiment Log**: `gs://temporal-grounding-gpt2-82feb/full_experiment.log`
-**All Results**: `gs://temporal-grounding-gpt2-82feb/`
+**Experiment Log**: `${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/full_experiment.log`
+**All Results**: `${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/`

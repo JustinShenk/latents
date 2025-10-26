@@ -16,7 +16,7 @@
    - Stored in: `data/sanity_check_prompts.json`
 
 3. **Files Uploaded to GCS**
-   - All code synced to: `gs://temporal-grounding-gpt2-82feb/code/`
+   - All code synced to: `${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/code/`
    - Prompts uploaded and ready
 
 ### Domain Distribution
@@ -54,7 +54,7 @@ gcloud compute ssh temporal-gpt2-experiment --project=new-one-82feb --zone=us-ce
 
 # 3. On the instance:
 cd ~
-gsutil -m rsync -r gs://temporal-grounding-gpt2-82feb/code/ temporal-grounding-gpt2/
+gsutil -m rsync -r ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/code/ temporal-grounding-gpt2/
 cd temporal-grounding-gpt2
 
 # 4. Setup environment
@@ -122,9 +122,9 @@ After running on GCP, you'll get:
 
 ```bash
 # From local machine
-gsutil -m rsync -r gs://temporal-grounding-gpt2-82feb/results/ results/
-gsutil -m rsync -r gs://temporal-grounding-gpt2-82feb/probes/ probes/
-gsutil -m rsync -r gs://temporal-grounding-gpt2-82feb/activations/ activations/
+gsutil -m rsync -r ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/results/ results/
+gsutil -m rsync -r ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/probes/ probes/
+gsutil -m rsync -r ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/activations/ activations/
 ```
 
 ## Cleanup
@@ -148,7 +148,7 @@ gcloud compute instances delete temporal-gpt2-experiment \
 - ✅ `requirements.txt` - Dependencies
 - ✅ `GCP_SETUP.md` - Detailed instructions
 
-All files are at: **`gs://temporal-grounding-gpt2-82feb/code/`**
+All files are at: **`${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/code/`**
 
 ---
 

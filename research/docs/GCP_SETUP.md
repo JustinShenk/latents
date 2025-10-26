@@ -1,15 +1,33 @@
 # GCP Setup Instructions
 
+## Prerequisites
+
+Before running any commands, set up your environment variables:
+
+```bash
+# Copy .env.example to .env and configure
+cp .env.example .env
+
+# Edit .env to set your GCS bucket
+# GCS_BUCKET=gs://your-bucket-name
+
+# Load environment variables
+export GCS_BUCKET=gs://your-bucket-name  # Replace with your actual bucket
+
+# Or source from .env file
+source <(grep -v '^#' .env | xargs -I {} echo export {})
+```
+
 ## Quick Start
 
 ### 1. Upload Project to GCS Bucket
 
 ```bash
 # From local machine in the temporal-grounding-gpt2 directory
-gsutil -m rsync -r . gs://temporal-grounding-gpt2-82feb/code/
+gsutil -m rsync -r . ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/code/
 
 # Verify upload
-gsutil ls gs://temporal-grounding-gpt2-82feb/code/
+gsutil ls ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/code/
 ```
 
 ### 2. Create GCP Compute Instance
@@ -30,7 +48,7 @@ gcloud compute instances create temporal-gpt2-experiment \
     --metadata=startup-script='#!/bin/bash
 export HOME=/root
 cd /root
-gsutil -m rsync -r gs://temporal-grounding-gpt2-82feb/code/ temporal-grounding-gpt2/
+gsutil -m rsync -r ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/code/ temporal-grounding-gpt2/
 '
 ```
 
@@ -57,7 +75,8 @@ pip install transformer-lens transformers scikit-learn pandas numpy matplotlib s
 # Verify GPU
 python -c "import torch; print('CUDA available:', torch.cuda.is_available())"
 
-# Set OpenAI API key (replace with your actual key)
+# Set environment variables (replace with your actual values)
+export GCS_BUCKET=gs://your-bucket-name
 export OPENAI_API_KEY="your-openai-api-key-here"
 ```
 
@@ -65,7 +84,7 @@ export OPENAI_API_KEY="your-openai-api-key-here"
 
 ```bash
 # Download the generated prompts from bucket
-gsutil cp gs://temporal-grounding-gpt2-82feb/code/data/sanity_check_prompts.json data/
+gsutil cp ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/code/data/sanity_check_prompts.json data/
 
 # Extract activations (this will use GPU)
 python src/extract_activations.py \
@@ -86,9 +105,9 @@ python src/train_probes.py \
 
 ```bash
 # From your local machine
-gsutil -m rsync -r gs://temporal-grounding-gpt2-82feb/results/ temporal-grounding-gpt2/results/
-gsutil -m rsync -r gs://temporal-grounding-gpt2-82feb/probes/ temporal-grounding-gpt2/probes/
-gsutil -m rsync -r gs://temporal-grounding-gpt2-82feb/activations/ temporal-grounding-gpt2/activations/
+gsutil -m rsync -r ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/results/ temporal-grounding-gpt2/results/
+gsutil -m rsync -r ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/probes/ temporal-grounding-gpt2/probes/
+gsutil -m rsync -r ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/activations/ temporal-grounding-gpt2/activations/
 ```
 
 ### 7. Cleanup (IMPORTANT)
@@ -112,9 +131,9 @@ gcloud compute instances delete temporal-gpt2-experiment \
 ## Automated Sync
 
 All scripts automatically sync results to GCS after completion:
-- `gs://temporal-grounding-gpt2-82feb/results/`
-- `gs://temporal-grounding-gpt2-82feb/activations/`
-- `gs://temporal-grounding-gpt2-82feb/probes/`
+- `${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/results/`
+- `${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/activations/`
+- `${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/probes/`
 
 Even if instance is preempted, your results are safe!
 
@@ -128,5 +147,5 @@ gcloud compute instances list --project=new-one-82feb
 gcloud compute ssh temporal-gpt2-experiment --project=new-one-82feb --zone=us-central1-a --command="tail -f ~/temporal-grounding-gpt2/run.log"
 
 # Download all results
-gsutil -m rsync -r gs://temporal-grounding-gpt2-82feb/ temporal-grounding-gpt2/
+gsutil -m rsync -r ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/ temporal-grounding-gpt2/
 ```

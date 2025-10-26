@@ -90,7 +90,7 @@ def main():
     print("  - activations/sanity_check.npz")
     print("  - probes/sanity_layer_*_probe.pkl")
     print("  - results/sanity_check_results.csv")
-    print("\nAll files synced to: gs://temporal-grounding-gpt2-82feb/")
+    print("\nAll files synced to: ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/")
     print("\nNext steps:")
     print("  1. Review results/sanity_check_results.csv")
     print("  2. Check best layer accuracy")

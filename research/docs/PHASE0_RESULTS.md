@@ -163,7 +163,7 @@ Before scaling, could:
 
 ## Files Generated
 
-All results safely stored in `gs://temporal-grounding-gpt2-82feb/`:
+All results safely stored in `${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/`:
 
 - ✅ `sanity_check.npz` - Activations (3.3 MB, 100 samples × 12 layers)
 - ✅ `sanity_check_results.csv` - Probe accuracies by layer

@@ -5,7 +5,7 @@
 PROJECT="new-one-82feb"
 ZONE="us-central1-a"
 INSTANCE="temporal-gpt2-experiment"
-BUCKET="gs://temporal-grounding-gpt2-82feb"
+BUCKET="${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}"
 
 function create_instance() {
     echo "Creating GCP instance..."

@@ -32,7 +32,7 @@ echo "=========================================="
 # Download pre-generated dataset from GCS (faster than regenerating)
 if [ ! -f "data/raw_prompts.json" ]; then
     echo "Downloading pre-generated dataset..."
-    gsutil cp gs://temporal-grounding-gpt2-82feb/data/raw_prompts.json data/ || {
+    gsutil cp ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/data/raw_prompts.json data/ || {
         echo "Dataset not found in GCS, generating locally..."
         python3 temporal_steering/dataset.py --mode full
     }
@@ -117,7 +117,7 @@ echo "EXPERIMENT COMPLETE!"
 echo "=========================================="
 echo ""
 echo "All results synced to:"
-echo "  gs://temporal-grounding-gpt2-82feb/"
+echo "  ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/"
 echo ""
 echo "Key files:"
 echo "  - results/full_probe_results.csv"

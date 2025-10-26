@@ -13,7 +13,7 @@ echo "=========================================="
 echo "1. Downloading code from GCS bucket..."
 cd ~
 mkdir -p temporal-grounding-gpt2
-gsutil -m rsync -r gs://temporal-grounding-gpt2-82feb/code/ temporal-grounding-gpt2/
+gsutil -m rsync -r ${GCS_BUCKET:-gs://temporal-grounding-gpt2-82feb}/code/ temporal-grounding-gpt2/
 cd temporal-grounding-gpt2
 
 # Install additional dependencies (PyTorch already installed in the image!)
