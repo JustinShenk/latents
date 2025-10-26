@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "dimension": "abstractness",
+    "description": "Contrastive pairs for abstractness steering (concrete ↔ abstract)",
+    "n_pairs": 8,
+    "contrast": "concrete/specific examples vs abstract/general principles"
+  },
+  "pairs": [
+    {
+      "concrete": "Apple released the iPhone 15 on September 22, 2023, featuring a 6.1-inch display and 48MP camera.",
+      "abstract": "Product launches involve strategic timing, competitive positioning, and value proposition communication."
+    },
+    {
+      "concrete": "Sara went to the grocery store at 3pm to buy milk, eggs, and bread for dinner.",
+      "abstract": "Daily routines involve planning, resource acquisition, and fulfillment of needs."
+    },
+    {
+      "concrete": "The Python script crashed on line 47 with a KeyError when accessing the 'user_id' dictionary key.",
+      "abstract": "Software failures arise from incorrect assumptions about state and inadequate error handling."
+    },
+    {
+      "concrete": "Tesla's Model 3 costs $40,000, has 272 miles of range, and accelerates 0-60 in 5.8 seconds.",
+      "abstract": "Transportation technologies balance cost, performance, and sustainability tradeoffs."
+    },
+    {
+      "concrete": "On Monday, the team held a standup meeting at 9am where each member shared their progress.",
+      "abstract": "Organizational coordination mechanisms facilitate information sharing and alignment."
+    },
+    {
+      "concrete": "The recipe calls for 2 cups flour, 1 cup sugar, 3 eggs, and baking at 350°F for 45 minutes.",
+      "abstract": "Culinary processes transform raw ingredients through controlled chemical reactions."
+    },
+    {
+      "concrete": "Amazon Prime increased its annual fee from $119 to $139 in February 2022.",
+      "abstract": "Pricing strategies reflect value perception, competitive dynamics, and cost structures."
+    },
+    {
+      "concrete": "The patient received 500mg of amoxicillin three times daily for a sinus infection.",
+      "abstract": "Medical interventions target pathophysiological mechanisms to restore homeostasis."
+    }
+  ]
+}

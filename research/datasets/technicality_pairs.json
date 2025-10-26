@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "dimension": "technicality",
+    "description": "Contrastive pairs for technicality steering (simple ↔ technical)",
+    "n_pairs": 8,
+    "contrast": "simple/layman explanations vs technical/specialized language"
+  },
+  "pairs": [
+    {
+      "simple": "Machine learning is when computers learn from examples instead of being told exactly what to do.",
+      "technical": "Machine learning employs statistical algorithms to optimize objective functions by iteratively adjusting model parameters based on gradient descent over training data."
+    },
+    {
+      "simple": "The computer stores information in memory so it can use it later.",
+      "technical": "The system utilizes volatile DRAM for runtime state persistence and non-volatile storage for long-term data retention across power cycles."
+    },
+    {
+      "simple": "The medicine helps your body fight infections.",
+      "technical": "The antibiotic agent inhibits bacterial cell wall synthesis by binding to penicillin-binding proteins, resulting in compromised structural integrity and cellular lysis."
+    },
+    {
+      "simple": "The website loads faster because it caches data.",
+      "technical": "The application implements a multi-tier caching strategy utilizing CDN edge nodes, Redis for session state, and browser-level HTTP caching directives to minimize latency."
+    },
+    {
+      "simple": "DNA contains the instructions for making proteins in cells.",
+      "technical": "The nucleotide sequence encodes genetic information through codon triplets that specify amino acid residues during ribosomal translation of mRNA transcripts."
+    },
+    {
+      "simple": "The car's engine turns chemical energy into motion.",
+      "technical": "The internal combustion engine converts hydrocarbon oxidation enthalpy into mechanical work through thermodynamic expansion of gases in the cylinder chamber."
+    },
+    {
+      "simple": "Encryption scrambles your data so others can't read it.",
+      "technical": "The cryptographic algorithm applies a symmetric cipher with a 256-bit key to transform plaintext through multiple rounds of substitution and permutation operations."
+    },
+    {
+      "simple": "The neural network recognizes patterns in the data.",
+      "technical": "The deep convolutional architecture extracts hierarchical feature representations through successive layers of learnable filters with ReLU activations and batch normalization."
+    }
+  ]
+}

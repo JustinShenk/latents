@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "dimension": "formality",
+    "description": "Contrastive pairs for formality steering (casual ↔ formal)",
+    "n_pairs": 8,
+    "contrast": "casual/colloquial vs formal/professional language"
+  },
+  "pairs": [
+    {
+      "casual": "Hey, what's up with the weather today?",
+      "formal": "Could you please provide information about current meteorological conditions?"
+    },
+    {
+      "casual": "That's a pretty cool idea, we should totally do it!",
+      "formal": "That is an excellent proposal which merits serious consideration for implementation."
+    },
+    {
+      "casual": "Sorry, can't make it to the meeting, got stuff to do.",
+      "formal": "I regret to inform you that I am unable to attend the meeting due to prior commitments."
+    },
+    {
+      "casual": "The project's going great, we're making good progress!",
+      "formal": "The project is proceeding satisfactorily, with substantial advancement toward our objectives."
+    },
+    {
+      "casual": "Just wanted to check in and see how things are going.",
+      "formal": "I am writing to inquire about the current status of the matter."
+    },
+    {
+      "casual": "Thanks a bunch for your help with this!",
+      "formal": "I would like to express my sincere gratitude for your valuable assistance."
+    },
+    {
+      "casual": "We need to figure out what went wrong here.",
+      "formal": "It is necessary to conduct a thorough analysis to identify the root cause of this issue."
+    },
+    {
+      "casual": "Can you give me the lowdown on what happened?",
+      "formal": "Could you please provide a comprehensive summary of the events?"
+    }
+  ]
+}
