@@ -245,7 +245,7 @@
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" style="display: none;">
             <h2>🎨 Example Visualizations</h2>
             <p>Demonstration dashboards and exploratory tools (examples - not research results).</p>
 
@@ -273,7 +273,7 @@
 
         <footer>
             <p><strong>Latents</strong> - Multi-Dimensional LLM Steering</p>
-            <p>© 2025 Justin Shenk | <a href="https://github.com/JustinShenk/latents" target="_blank" rel="noopener">GitHub</a></p>
+            <p>© 2025 Latents Research Team | <a href="https://github.com/JustinShenk/latents" target="_blank" rel="noopener">GitHub</a></p>
         </footer>
     </div>
 
@@ -289,7 +289,7 @@
         // Load experiments and examples dynamically
         async function loadExperiments() {
             try {
-                const response = await fetch('/experiments.json');
+                const response = await fetch('https://raw.githubusercontent.com/JustinShenk/latents/main/experiments.json');
                 const data = await response.json();
 
                 renderExperiments(data.experiments);

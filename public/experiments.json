@@ -19,8 +19,8 @@
         "warning": "Preliminary results - requires validation with larger dataset (Issue #1)"
       },
       "related_files": {
-        "dataset": "/research/datasets/confound_experiment.json",
-        "results": "/research/results/CONFOUND_ANALYSIS_RESULTS.md",
+        "dataset": "https://raw.githubusercontent.com/JustinShenk/latents/main/research/datasets/confound_experiment.json",
+        "results": "https://raw.githubusercontent.com/JustinShenk/latents/main/research/results/CONFOUND_ANALYSIS_RESULTS.md",
         "issue": "https://github.com/JustinShenk/latents/issues/1"
       }
     }

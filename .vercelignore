@@ -31,7 +31,7 @@ pyproject.toml
 .env*
 
 # Source directories
-temporal_steering/
+latents/
 research/experiments/
 research/tools/
 research/scripts/
