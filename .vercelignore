@@ -1,0 +1,75 @@
+# Python
+__pycache__
+*.py[cod]
+*.pyc
+venv/
+venv_*/
+*.egg-info/
+
+# Data and models
+activations/
+probes/
+models/
+checkpoints/
+*.npz
+*.pkl
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Research files
+research/data/
+research/probes/
+research/results/*.csv
+research/results/*.npz
+data_download/
+
+# Notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+*.json.key
+*credentials.json
+
+# Development
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Documentation (keep only visualizations)
+research/docs/
+ARCHITECTURE.md
+PLUGIN_GUIDE.md
+SCALING_AND_USAGE.md
+PACKAGE_NAMING_STRATEGY.md
+PACKAGE_ORGANIZATION.md
+PLUGIN_ARCHITECTURE_SUMMARY.md
+RESEARCHER_ONBOARDING.md
+
+# Source code
+temporal_steering/
+examples/*.py
+research/experiments/
+research/tools/
+research/scripts/
+src/
+templates/
+
+# Config files
+requirements.txt
+setup.py
+pyproject.toml
+MANIFEST.in
+.gitignore
+
+# Keep only public/ directory for deployment
+!public/**

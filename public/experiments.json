@@ -1,0 +1,62 @@
+{
+  "experiments": [
+    {
+      "id": "confound-analysis",
+      "title": "Confound Analysis (PCA)",
+      "description": "2×2 experimental design testing if temporal steering is independent of style. Shows PCA decomposition with PC1 vs PC2 and PC1 vs PC3 projections.",
+      "date": "2025-10-26",
+      "status": "preliminary",
+      "category": "research",
+      "file": "/research/confound-analysis.html",
+      "badges": ["Interactive Plotly", "Issue #1", "Preliminary"],
+      "metadata": {
+        "dataset_size": 40,
+        "conditions": ["immediate_casual", "immediate_formal", "longterm_casual", "longterm_formal"],
+        "model": "GPT-2",
+        "layers_analyzed": [10],
+        "pc1_variance": 18.1,
+        "pc2_variance": 13.6,
+        "warning": "Preliminary results - requires validation with larger dataset (Issue #1)"
+      },
+      "related_files": {
+        "dataset": "/research/datasets/confound_experiment.json",
+        "results": "/research/results/CONFOUND_ANALYSIS_RESULTS.md",
+        "issue": "https://github.com/JustinShenk/latents/issues/1"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "interactive-sandbox",
+      "title": "Interactive Sandbox",
+      "description": "Explore steering parameters and see real-time effects on model outputs. Adjust strength, temperature, and other hyperparameters.",
+      "category": "demo",
+      "file": "/examples/interactive-sandbox.html",
+      "badges": ["Demo", "Interactive"]
+    },
+    {
+      "id": "complete-results",
+      "title": "Complete Results Dashboard",
+      "description": "Comprehensive view of experimental results across multiple conditions, showing temporal steering effects.",
+      "category": "demo",
+      "file": "/examples/complete-results.html",
+      "badges": ["Demo", "Dashboard"]
+    },
+    {
+      "id": "results-dashboard",
+      "title": "Results Dashboard",
+      "description": "Overview of key metrics and performance across experiments with comparative visualizations.",
+      "category": "demo",
+      "file": "/examples/results-dashboard.html",
+      "badges": ["Demo", "Metrics"]
+    },
+    {
+      "id": "temporal-explorer",
+      "title": "Temporal Explorer",
+      "description": "Deep dive into temporal scope dimension and its effects on model behavior across different contexts.",
+      "category": "demo",
+      "file": "/examples/temporal-explorer.html",
+      "badges": ["Demo", "Exploratory"]
+    }
+  ]
+}

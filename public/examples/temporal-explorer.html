@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporal Scale Detection Explorer</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0e27;
+            color: #e0e6ed;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1a1f3a 0%, #2d3561 100%);
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #a0aec0;
+            font-size: 1.15em;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1200px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel {
+            background: #1a1f3a;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .panel-title {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .panel-description {
+            color: #a0aec0;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* Temporal Playground Styles */
+        .example-selector {
+            margin-bottom: 25px;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .example-btn {
+            padding: 12px 16px;
+            background: #2d3561;
+            border: 2px solid #4a5578;
+            border-radius: 8px;
+            color: #e0e6ed;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        .example-btn:hover {
+            background: #3d4571;
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .example-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: #667eea;
+        }
+
+        .task-display {
+            background: #0f1428;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #667eea;
+        }
+
+        .task-label {
+            font-size: 0.85em;
+            color: #a0aec0;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .task-text {
+            font-size: 1.1em;
+            color: #e0e6ed;
+            line-height: 1.6;
+        }
+
+        .temporal-slider {
+            margin: 30px 0;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .current-horizon {
+            font-weight: 600;
+            font-size: 1.3em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #10b981 0%, #f59e0b 50%, #ef4444 100%);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            border: none;
+        }
+
+        .horizon-markers {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #a0aec0;
+        }
+
+        .prompt-display {
+            background: #0f1428;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #2d3561;
+            min-height: 120px;
+        }
+
+        .prompt-text {
+            font-size: 1.15em;
+            line-height: 1.7;
+            color: #e0e6ed;
+        }
+
+        .temporal-keyword {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Layer Explorer Styles */
+        .layer-viz-container {
+            margin-top: 20px;
+        }
+
+        svg {
+            display: block;
+        }
+
+        .tooltip {
+            position: absolute;
+            padding: 12px 16px;
+            background: rgba(26, 31, 58, 0.98);
+            border: 1px solid #667eea;
+            border-radius: 8px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            font-size: 0.9em;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        .tooltip.show {
+            opacity: 1;
+        }
+
+        .axis-label {
+            font-size: 13px;
+            fill: #a0aec0;
+        }
+
+        .grid-line {
+            stroke: #2d3561;
+            stroke-dasharray: 2,2;
+            stroke-width: 1;
+        }
+
+        .layer-bar {
+            transition: all 0.3s ease;
+        }
+
+        .layer-bar:hover {
+            stroke: #fff;
+            stroke-width: 2;
+            filter: brightness(1.2);
+        }
+
+        .info-box {
+            background: #0f1428;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #10b981;
+        }
+
+        .info-title {
+            font-weight: 600;
+            color: #10b981;
+            margin-bottom: 8px;
+        }
+
+        .info-text {
+            color: #a0aec0;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .activation-heatmap {
+            margin-top: 25px;
+        }
+
+        .heatmap-title {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #e0e6ed;
+        }
+
+        .heatmap-row {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 2px;
+        }
+
+        .heatmap-cell {
+            flex: 1;
+            height: 30px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .layer-label {
+            width: 60px;
+            display: flex;
+            align-items: center;
+            font-size: 0.85em;
+            color: #a0aec0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Temporal Scale Detection Explorer</h1>
+            <p class="subtitle">Explore how GPT-2 internally represents different temporal scales in planning contexts</p>
+        </header>
+
+        <div class="main-grid">
+            <!-- Left Panel: Temporal Playground -->
+            <div class="panel">
+                <h2 class="panel-title">
+                    <span>🎮</span>
+                    <span>Interactive Temporal Playground</span>
+                </h2>
+                <p class="panel-description">
+                    Select a planning task and adjust the temporal horizon slider to see how the prompt changes.
+                    Watch how the model's internal representations might shift across different time scales.
+                </p>
+
+                <div class="example-selector">
+                    <div class="task-label">Select a Planning Task</div>
+                    <div class="example-grid">
+                        <button class="example-btn active" data-id="0">Expand Business</button>
+                        <button class="example-btn" data-id="10">Cancer Drug Trial</button>
+                        <button class="example-btn" data-id="20">Food Festival</button>
+                        <button class="example-btn" data-id="30">AI Traffic System</button>
+                        <button class="example-btn" data-id="40">Feature Film</button>
+                        <button class="example-btn" data-id="21">Kitchen Renovation</button>
+                    </div>
+                </div>
+
+                <div class="task-display">
+                    <div class="task-label">Core Task</div>
+                    <div class="task-text" id="coreTask"></div>
+                </div>
+
+                <div class="temporal-slider">
+                    <div class="slider-label">
+                        <span>Temporal Horizon</span>
+                        <span class="current-horizon" id="horizonDisplay">1 month</span>
+                    </div>
+                    <input type="range" id="timeSlider" min="0" max="100" value="30" step="1">
+                    <div class="horizon-markers">
+                        <span>3 days</span>
+                        <span>1 week</span>
+                        <span>1 month</span>
+                        <span>1 year</span>
+                        <span>5 years</span>
+                        <span>20 years</span>
+                    </div>
+                </div>
+
+                <div class="prompt-display">
+                    <div class="prompt-text" id="promptText"></div>
+                </div>
+
+                <div class="activation-heatmap">
+                    <div class="heatmap-title">Simulated Layer Activations</div>
+                    <div id="heatmapViz"></div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-title">How This Works</div>
+                    <div class="info-text">
+                        The slider interpolates between real short-term and long-term planning prompts from the dataset.
+                        The heatmap shows a simulation of how different layers might respond - in the full experiment,
+                        these would be actual GPT-2 activation patterns extracted from the model.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Layer Explorer -->
+            <div class="panel">
+                <h2 class="panel-title">
+                    <span>📊</span>
+                    <span>Layer-by-Layer Accuracy</span>
+                </h2>
+                <p class="panel-description">
+                    Probe accuracy for temporal horizon classification across all 12 GPT-2 layers.
+                    Layer 8 achieves peak performance at 78%, showing temporal information crystallizes in middle-to-late layers.
+                </p>
+
+                <div class="layer-viz-container">
+                    <div id="layerExplorer"></div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-title">Key Finding</div>
+                    <div class="info-text">
+                        <strong>Early layers (0-3):</strong> 58-66% accuracy - Basic lexical features<br>
+                        <strong>Middle layers (4-7):</strong> 70-74% accuracy - Semantic processing begins<br>
+                        <strong>Late layers (8-11):</strong> 72-78% accuracy - Peak temporal understanding ⭐
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tooltip"></div>
+
+    <script>
+        // Real data from Phase 0
+        const layerData = [
+            {layer: 0, accuracy: 0.61, std: 0.0374},
+            {layer: 1, accuracy: 0.58, std: 0.0510},
+            {layer: 2, accuracy: 0.61, std: 0.0735},
+            {layer: 3, accuracy: 0.66, std: 0.0800},
+            {layer: 4, accuracy: 0.71, std: 0.0860},
+            {layer: 5, accuracy: 0.70, std: 0.1304},
+            {layer: 6, accuracy: 0.74, std: 0.1158},
+            {layer: 7, accuracy: 0.72, std: 0.1208},
+            {layer: 8, accuracy: 0.78, std: 0.0678},
+            {layer: 9, accuracy: 0.73, std: 0.0678},
+            {layer: 10, accuracy: 0.72, std: 0.0400},
+            {layer: 11, accuracy: 0.78, std: 0.1030}
+        ];
+
+        // Real examples from dataset
+        const examples = {
+            0: {
+                domain: "business planning",
+                core_task: "Expand the business by opening new physical store locations across the region",
+                short_prompt: "Develop a 1 month plan to expand the business by opening new physical store locations across the region",
+                long_prompt: "Develop a 20 years plan to expand the business by opening new physical store locations across the region",
+                short_horizon: "1 month",
+                long_horizon: "20 years"
+            },
+            10: {
+                domain: "scientific research",
+                core_task: "Develop and conduct a clinical trial for a new cancer immunotherapy drug",
+                short_prompt: "Develop a 3 days plan to develop and conduct a clinical trial for a new cancer immunotherapy drug",
+                long_prompt: "Develop a 10 years plan to develop and conduct a clinical trial for a new cancer immunotherapy drug",
+                short_horizon: "3 days",
+                long_horizon: "10 years"
+            },
+            20: {
+                domain: "personal projects",
+                core_task: "Plan and host a city-wide food and culture festival",
+                short_prompt: "Develop a 3 days plan to plan and host a city-wide food and culture festival.",
+                long_prompt: "Develop a 20 years plan to plan and host a city-wide food and culture festival.",
+                short_horizon: "3 days",
+                long_horizon: "20 years"
+            },
+            30: {
+                domain: "technical/engineering",
+                core_task: "Design, develop, and implement an AI-based traffic management system for a metropolitan city",
+                short_prompt: "Develop a 1 week plan to design, develop, and implement an ai-based traffic management system for a metropolitan city",
+                long_prompt: "Develop a 5 years plan to design, develop, and implement an ai-based traffic management system for a metropolitan city",
+                short_horizon: "1 week",
+                long_horizon: "5 years"
+            },
+            40: {
+                domain: "creative/artistic",
+                core_task: "Write and produce a full-length feature film",
+                short_prompt: "Develop a 2 weeks plan to write and produce a full-length feature film.",
+                long_prompt: "Develop a 5 years plan to write and produce a full-length feature film.",
+                short_horizon: "2 weeks",
+                long_horizon: "5 years"
+            },
+            21: {
+                domain: "personal projects",
+                core_task: "Renovate the kitchen and living room of your house",
+                short_prompt: "Develop a 1 month plan to renovate the kitchen and living room of your house",
+                long_prompt: "Develop a 10 years plan to renovate the kitchen and living room of your house",
+                short_horizon: "1 month",
+                long_horizon: "10 years"
+            }
+        };
+
+        let currentExample = 0;
+
+        // Temporal horizon mapping
+        const horizonMap = [
+            { value: 0, label: '3 days', days: 3 },
+            { value: 15, label: '1 week', days: 7 },
+            { value: 30, label: '2 weeks', days: 14 },
+            { value: 40, label: '1 month', days: 30 },
+            { value: 55, label: '3 months', days: 90 },
+            { value: 65, label: '6 months', days: 180 },
+            { value: 75, label: '1 year', days: 365 },
+            { value: 85, label: '3 years', days: 1095 },
+            { value: 92, label: '5 years', days: 1825 },
+            { value: 96, label: '10 years', days: 3650 },
+            { value: 100, label: '20 years', days: 7300 }
+        ];
+
+        function getHorizonLabel(sliderValue) {
+            let closest = horizonMap[0];
+            for (let h of horizonMap) {
+                if (Math.abs(h.value - sliderValue) < Math.abs(closest.value - sliderValue)) {
+                    closest = h;
+                }
+            }
+            return closest.label;
+        }
+
+        function interpolatePrompt(example, sliderValue) {
+            const isShortTerm = sliderValue < 50;
+            const basePrompt = isShortTerm ? example.short_prompt : example.long_prompt;
+            const horizon = getHorizonLabel(sliderValue);
+
+            // Replace the temporal horizon in the prompt
+            const promptWithHorizon = basePrompt.replace(
+                /\d+\s+(days?|weeks?|months?|years?)/i,
+                `<span class="temporal-keyword">${horizon}</span>`
+            );
+
+            return `Develop a ${horizon} plan to ${example.core_task.toLowerCase()}`;
+        }
+
+        function updatePromptDisplay() {
+            const example = examples[currentExample];
+            const sliderValue = parseInt(document.getElementById('timeSlider').value);
+            const horizon = getHorizonLabel(sliderValue);
+
+            document.getElementById('coreTask').textContent = example.core_task;
+            document.getElementById('horizonDisplay').textContent = horizon;
+
+            const promptText = `Develop a <span class="temporal-keyword">${horizon}</span> plan to ${example.core_task.toLowerCase()}`;
+            document.getElementById('promptText').innerHTML = promptText;
+
+            updateHeatmap(sliderValue);
+        }
+
+        function updateHeatmap(sliderValue) {
+            const isLongTerm = sliderValue > 50;
+            const intensity = Math.abs(sliderValue - 50) / 50; // 0 at middle, 1 at extremes
+
+            const heatmapData = layerData.map((layer, i) => {
+                // Simulate activation patterns - higher layers more sensitive to temporal info
+                const layerSensitivity = i / 11; // 0 to 1
+                const baseActivation = layer.accuracy;
+
+                // Create 8 "neurons" per layer with varying sensitivities
+                const neurons = [];
+                for (let j = 0; j < 8; j++) {
+                    const neuronSensitivity = (j / 7) * layerSensitivity;
+                    let activation = baseActivation;
+
+                    if (isLongTerm) {
+                        activation += neuronSensitivity * intensity * 0.3;
+                    } else {
+                        activation -= neuronSensitivity * intensity * 0.2;
+                    }
+
+                    neurons.push(Math.max(0.3, Math.min(1, activation)));
+                }
+
+                return { layer: i, neurons };
+            });
+
+            renderHeatmap(heatmapData);
+        }
+
+        function renderHeatmap(data) {
+            const container = document.getElementById('heatmapViz');
+            container.innerHTML = '';
+
+            const colorScale = d3.scaleSequential()
+                .domain([0.3, 1])
+                .interpolator(d3.interpolateRgbBasis(['#1a1f3a', '#667eea', '#f59e0b', '#ef4444']));
+
+            data.reverse().forEach(layerData => {
+                const row = document.createElement('div');
+                row.className = 'heatmap-row';
+                row.style.display = 'flex';
+                row.style.gap = '2px';
+                row.style.marginBottom = '2px';
+
+                const label = document.createElement('div');
+                label.className = 'layer-label';
+                label.textContent = `L${layerData.layer}`;
+                row.appendChild(label);
+
+                layerData.neurons.forEach((activation, i) => {
+                    const cell = document.createElement('div');
+                    cell.className = 'heatmap-cell';
+                    cell.style.backgroundColor = colorScale(activation);
+                    cell.title = `Layer ${layerData.layer}, Neuron ${i}: ${activation.toFixed(2)}`;
+                    row.appendChild(cell);
+                });
+
+                container.appendChild(row);
+            });
+        }
+
+        // Example selection
+        document.querySelectorAll('.example-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.example-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentExample = parseInt(btn.dataset.id);
+                updatePromptDisplay();
+            });
+        });
+
+        // Slider interaction
+        document.getElementById('timeSlider').addEventListener('input', updatePromptDisplay);
+
+        // Layer Explorer Visualization
+        function createLayerExplorer() {
+            const width = 700;
+            const height = 500;
+            const margin = {top: 40, right: 40, bottom: 60, left: 60};
+
+            const svg = d3.select('#layerExplorer')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            const x = d3.scaleBand()
+                .domain(layerData.map(d => d.layer))
+                .range([margin.left, width - margin.right])
+                .padding(0.2);
+
+            const y = d3.scaleLinear()
+                .domain([0.5, 0.85])
+                .range([height - margin.bottom, margin.top]);
+
+            const colorScale = d3.scaleSequential()
+                .domain([0.55, 0.80])
+                .interpolator(d3.interpolateRgbBasis(['#ef4444', '#f59e0b', '#10b981', '#3b82f6']));
+
+            // Grid lines
+            svg.append('g')
+                .selectAll('line')
+                .data(y.ticks(7))
+                .join('line')
+                .attr('class', 'grid-line')
+                .attr('x1', margin.left)
+                .attr('x2', width - margin.right)
+                .attr('y1', d => y(d))
+                .attr('y2', d => y(d));
+
+            // Bars
+            svg.selectAll('.layer-bar')
+                .data(layerData)
+                .join('rect')
+                .attr('class', 'layer-bar')
+                .attr('x', d => x(d.layer))
+                .attr('y', d => y(d.accuracy))
+                .attr('width', x.bandwidth())
+                .attr('height', d => y(0.5) - y(d.accuracy))
+                .attr('fill', d => colorScale(d.accuracy))
+                .attr('rx', 4)
+                .style('cursor', 'pointer')
+                .on('mouseover', (event, d) => {
+                    const tooltip = d3.select('.tooltip');
+                    tooltip.html(`
+                        <strong>Layer ${d.layer}</strong><br>
+                        Accuracy: ${(d.accuracy * 100).toFixed(1)}%<br>
+                        Std Dev: ±${(d.std * 100).toFixed(1)}%<br>
+                        95% CI: ${((d.accuracy - 1.96 * d.std) * 100).toFixed(1)}% - ${((d.accuracy + 1.96 * d.std) * 100).toFixed(1)}%
+                    `)
+                    .style('left', (event.pageX + 15) + 'px')
+                    .style('top', (event.pageY - 15) + 'px')
+                    .classed('show', true);
+                })
+                .on('mouseout', () => {
+                    d3.select('.tooltip').classed('show', false);
+                });
+
+            // Baseline line
+            svg.append('line')
+                .attr('x1', margin.left)
+                .attr('x2', width - margin.right)
+                .attr('y1', y(0.5))
+                .attr('y2', y(0.5))
+                .attr('stroke', '#ef4444')
+                .attr('stroke-width', 2)
+                .attr('stroke-dasharray', '5,5');
+
+            svg.append('text')
+                .attr('x', width - margin.right - 10)
+                .attr('y', y(0.5) - 5)
+                .attr('text-anchor', 'end')
+                .attr('fill', '#ef4444')
+                .style('font-size', '12px')
+                .text('Baseline (50%)');
+
+            // Axes
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x))
+                .selectAll('text')
+                .attr('fill', '#a0aec0')
+                .style('font-size', '12px');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y).tickFormat(d => (d * 100).toFixed(0) + '%'))
+                .selectAll('text')
+                .attr('fill', '#a0aec0')
+                .style('font-size', '12px');
+
+            // Axis labels
+            svg.append('text')
+                .attr('x', width / 2)
+                .attr('y', height - 10)
+                .attr('text-anchor', 'middle')
+                .attr('class', 'axis-label')
+                .text('GPT-2 Layer');
+
+            svg.append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -height / 2)
+                .attr('y', 20)
+                .attr('text-anchor', 'middle')
+                .attr('class', 'axis-label')
+                .text('Probe Accuracy');
+        }
+
+        // Initialize
+        createLayerExplorer();
+        updatePromptDisplay();
+    </script>
+</body>
+</html>

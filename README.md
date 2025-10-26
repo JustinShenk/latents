@@ -248,6 +248,16 @@ Or try the [Colab notebook](https://colab.research.google.com/github/JustinShenk
 **Long-term Steering (+0.8)**:
 > "Establish institutional frameworks for intergenerational equity, invest in fundamental research for breakthrough technologies, create policy mechanisms that adapt over decades..."
 
+## 🌐 Live Demos & Results
+
+Interactive visualizations of research results are deployed on Vercel:
+- **Live Site**: [latents.vercel.app](https://latents.vercel.app) (or your custom domain)
+- Dynamically loads experiments from `public/experiments.json`
+- Shows detailed metadata for each experiment
+- Click any experiment card to view full details before viewing visualization
+
+See [public/README.md](public/README.md) for deployment instructions.
+
 ## 🛣️ Roadmap
 
 - [ ] PyPI package release
