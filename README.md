@@ -12,10 +12,15 @@ Interactive visualizations: [latents.vercel.app](https://latents.vercel.app)
 
 - **Plugin Architecture**: Extensible framework for custom steering dimensions
 - **Multi-Model Support**: Works with GPT-2, LLaMA, Mistral, Falcon, and more
-- **Temporal Scope Steering**: Flagship dimension (immediate ↔ long-term thinking)
+- **Pre-trained Dimensions**:
+  - `temporal_scope`: immediate ↔ long-term thinking
+  - `formality`: casual ↔ formal language
+  - `technicality`: simple ↔ technical explanations
+  - `abstractness`: concrete ↔ abstract concepts
 - **Multi-Dimensional Composition**: Combine multiple steering dimensions simultaneously
 - **Research Tools**: PCA analysis, confound testing, human evaluation utilities
 - **Interactive Demos**: Web UI and Jupyter notebooks
+- **CAA Compatible**: Fully compatible with nrimsky/CAA experiments
 
 ## 🚀 Quick Start
 
@@ -257,10 +262,10 @@ Note: These examples illustrate typical patterns observed during development. Re
 ## 🛣️ Roadmap
 
 - [ ] PyPI package release
-- [ ] Additional pre-trained dimensions (formality, technicality, abstractness)
+- [x] Additional pre-trained dimensions (formality, technicality, abstractness)
 - [ ] Multi-model benchmark suite
 - [ ] Automated confound detection
-- [ ] Integration with steering-vectors ecosystem
+- [x] Compatible with steering-vectors ecosystem (nrimsky/CAA)
 
 ## 📖 Citation
 
