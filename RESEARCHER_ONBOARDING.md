@@ -6,8 +6,8 @@ Welcome! This guide will get you set up to run experiments on temporal steering.
 
 ```bash
 # 1. Clone and setup environment
-git clone <your-repo-url>
-cd temporal-grounding-gpt2
+git clone https://github.com/JustinShenk/latents.git
+cd latents
 python3 -m venv venv_steering
 source venv_steering/bin/activate  # On Windows: venv_steering\Scripts\activate
 pip install -r requirements.txt
@@ -31,7 +31,7 @@ open research/results/pca_temporal_style_interactive.html  # macOS
 ## Project Structure
 
 ```
-temporal-grounding-gpt2/
+latents/
 ├── temporal_steering/          # Main package (don't edit for experiments)
 │   ├── core/                   # Plugin architecture
 │   ├── dimensions/             # Built-in steering dimensions
