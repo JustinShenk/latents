@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporal Scale Detection - Interactive Visualization Sandbox</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0e27;
+            color: #e0e6ed;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1a1f3a 0%, #2d3561 100%);
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #a0aec0;
+            font-size: 1.1em;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-tab {
+            padding: 12px 24px;
+            background: #1a1f3a;
+            border: 2px solid #2d3561;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        .nav-tab:hover {
+            background: #2d3561;
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: #667eea;
+            color: white;
+        }
+
+        .viz-panel {
+            display: none;
+            background: #1a1f3a;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .viz-panel.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .viz-title {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .viz-description {
+            color: #a0aec0;
+            margin-bottom: 30px;
+            font-size: 1.05em;
+        }
+
+        svg {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .tooltip {
+            position: absolute;
+            padding: 12px 16px;
+            background: rgba(26, 31, 58, 0.98);
+            border: 1px solid #667eea;
+            border-radius: 8px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            font-size: 0.9em;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        .tooltip.show {
+            opacity: 1;
+        }
+
+        .control-panel {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .control-group label {
+            font-size: 0.9em;
+            color: #a0aec0;
+            font-weight: 500;
+        }
+
+        button, select, input[type="range"] {
+            padding: 8px 16px;
+            background: #2d3561;
+            border: 1px solid #4a5578;
+            border-radius: 6px;
+            color: #e0e6ed;
+            cursor: pointer;
+            font-size: 0.95em;
+            transition: all 0.2s;
+        }
+
+        button:hover, select:hover {
+            background: #3d4571;
+            border-color: #667eea;
+        }
+
+        button.primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            font-weight: 600;
+        }
+
+        button.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        input[type="range"] {
+            width: 200px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: #0f1428;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #2d3561;
+        }
+
+        .stat-label {
+            color: #a0aec0;
+            font-size: 0.85em;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .axis-label {
+            font-size: 14px;
+            fill: #a0aec0;
+        }
+
+        .grid-line {
+            stroke: #2d3561;
+            stroke-dasharray: 2,2;
+            stroke-width: 1;
+        }
+
+        .confidence-band {
+            fill-opacity: 0.2;
+        }
+
+        .layer-bar {
+            transition: all 0.3s ease;
+        }
+
+        .layer-bar:hover {
+            stroke: #fff;
+            stroke-width: 2;
+        }
+
+        #playground {
+            background: #0f1428;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        #promptInput {
+            width: 100%;
+            padding: 16px;
+            background: #1a1f3a;
+            border: 2px solid #2d3561;
+            border-radius: 8px;
+            color: #e0e6ed;
+            font-size: 1.05em;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        #promptInput:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .prediction-result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #1a1f3a;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .probability-bar {
+            margin: 10px 0;
+        }
+
+        .probability-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .probability-fill {
+            height: 30px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Temporal Scale Detection in GPT-2</h1>
+            <p class="subtitle">Interactive Visualization Sandbox - Exploring how language models detect temporal scales</p>
+        </header>
+
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-panel="layer-explorer">Layer-by-Layer Explorer</div>
+            <div class="nav-tab" data-panel="comparison">Accuracy Comparison</div>
+            <div class="nav-tab" data-panel="progression">Animated Progression</div>
+            <div class="nav-tab" data-panel="playground">Temporal Playground</div>
+            <div class="nav-tab" data-panel="statistics">Statistical Dashboard</div>
+        </div>
+
+        <!-- Panel 1: Layer-by-Layer Explorer -->
+        <div class="viz-panel active" id="layer-explorer">
+            <h2 class="viz-title">Layer-by-Layer Accuracy Explorer</h2>
+            <p class="viz-description">
+                Explore how temporal information accumulates across GPT-2 layers.
+                Hover over bars for details, click to see layer-specific statistics.
+            </p>
+            <div id="layer-explorer-viz"></div>
+        </div>
+
+        <!-- Panel 2: Comparison View -->
+        <div class="viz-panel" id="comparison">
+            <h2 class="viz-title">Accuracy Comparison</h2>
+            <p class="viz-description">
+                Compare probe accuracy across layers with confidence intervals and baseline references.
+            </p>
+            <div class="control-panel">
+                <div class="control-group">
+                    <label>Show Confidence Intervals</label>
+                    <input type="checkbox" id="showConfidence" checked>
+                </div>
+                <div class="control-group">
+                    <label>Show Baseline (50%)</label>
+                    <input type="checkbox" id="showBaseline" checked>
+                </div>
+                <div class="control-group">
+                    <label>Highlight Best Layer</label>
+                    <input type="checkbox" id="highlightBest" checked>
+                </div>
+            </div>
+            <div id="comparison-viz"></div>
+        </div>
+
+        <!-- Panel 3: Animated Progression -->
+        <div class="viz-panel" id="progression">
+            <h2 class="viz-title">Animated Progression</h2>
+            <p class="viz-description">
+                Watch how temporal understanding builds up layer by layer through the transformer.
+            </p>
+            <div class="control-panel">
+                <button class="primary" id="playAnimation">▶ Play Animation</button>
+                <button id="resetAnimation">Reset</button>
+                <div class="control-group">
+                    <label>Animation Speed</label>
+                    <input type="range" id="animSpeed" min="100" max="2000" value="800" step="100">
+                    <span id="speedLabel">800ms</span>
+                </div>
+            </div>
+            <div id="progression-viz"></div>
+        </div>
+
+        <!-- Panel 4: Temporal Playground -->
+        <div class="viz-panel" id="playground">
+            <h2 class="viz-title">Temporal Scope Playground</h2>
+            <p class="viz-description">
+                Explore how different temporal phrases might be classified.
+                (Note: This is a simulation based on Phase 0 patterns - full model coming soon!)
+            </p>
+            <div style="background: #0f1428; padding: 30px; border-radius: 8px;">
+                <label for="promptInput" style="display: block; margin-bottom: 10px; font-weight: 600;">
+                    Enter a planning prompt:
+                </label>
+                <textarea id="promptInput" placeholder="Example: Develop a 5 year plan to build a startup ecosystem..."></textarea>
+                <button class="primary" id="analyzePrompt" style="margin-top: 15px;">Analyze Temporal Scope</button>
+                <div id="predictionResult"></div>
+            </div>
+        </div>
+
+        <!-- Panel 5: Statistical Dashboard -->
+        <div class="viz-panel" id="statistics">
+            <h2 class="viz-title">Statistical Dashboard</h2>
+            <p class="viz-description">
+                Comprehensive metrics and analysis from Phase 0 results.
+            </p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Best Layer</div>
+                    <div class="stat-value">Layer 8</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Peak Accuracy</div>
+                    <div class="stat-value">78.0%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Above Baseline</div>
+                    <div class="stat-value">+28pp</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Sample Size</div>
+                    <div class="stat-value">100</div>
+                </div>
+            </div>
+            <div id="statistics-viz"></div>
+        </div>
+    </div>
+
+    <div class="tooltip"></div>
+
+    <script>
+        // Data from Phase 0 results
+        const data = [
+            {layer: 0, accuracy: 0.61, std: 0.0374, samples: 100, features: 768},
+            {layer: 1, accuracy: 0.58, std: 0.0510, samples: 100, features: 768},
+            {layer: 2, accuracy: 0.61, std: 0.0735, samples: 100, features: 768},
+            {layer: 3, accuracy: 0.66, std: 0.0800, samples: 100, features: 768},
+            {layer: 4, accuracy: 0.71, std: 0.0860, samples: 100, features: 768},
+            {layer: 5, accuracy: 0.70, std: 0.1304, samples: 100, features: 768},
+            {layer: 6, accuracy: 0.74, std: 0.1158, samples: 100, features: 768},
+            {layer: 7, accuracy: 0.72, std: 0.1208, samples: 100, features: 768},
+            {layer: 8, accuracy: 0.78, std: 0.0678, samples: 100, features: 768},
+            {layer: 9, accuracy: 0.73, std: 0.0678, samples: 100, features: 768},
+            {layer: 10, accuracy: 0.72, std: 0.0400, samples: 100, features: 768},
+            {layer: 11, accuracy: 0.78, std: 0.1030, samples: 100, features: 768}
+        ];
+
+        // Color scale
+        const colorScale = d3.scaleSequential()
+            .domain([0.55, 0.80])
+            .interpolator(d3.interpolateRgbBasis(['#ef4444', '#f59e0b', '#10b981', '#3b82f6']));
+
+        // Tab navigation
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.viz-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.panel).classList.add('active');
+            });
+        });
+
+        // Tooltip
+        const tooltip = d3.select('.tooltip');
+
+        function showTooltip(event, content) {
+            tooltip.html(content)
+                .style('left', (event.pageX + 15) + 'px')
+                .style('top', (event.pageY - 15) + 'px')
+                .classed('show', true);
+        }
+
+        function hideTooltip() {
+            tooltip.classed('show', false);
+        }
+
+        // Visualization 1: Layer Explorer
+        function createLayerExplorer() {
+            const width = 1000;
+            const height = 500;
+            const margin = {top: 40, right: 40, bottom: 60, left: 60};
+
+            const svg = d3.select('#layer-explorer-viz')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            const x = d3.scaleBand()
+                .domain(data.map(d => d.layer))
+                .range([margin.left, width - margin.right])
+                .padding(0.2);
+
+            const y = d3.scaleLinear()
+                .domain([0.5, 0.85])
+                .range([height - margin.bottom, margin.top]);
+
+            // Grid lines
+            svg.append('g')
+                .attr('class', 'grid')
+                .selectAll('line')
+                .data(y.ticks(7))
+                .join('line')
+                .attr('class', 'grid-line')
+                .attr('x1', margin.left)
+                .attr('x2', width - margin.right)
+                .attr('y1', d => y(d))
+                .attr('y2', d => y(d));
+
+            // Bars
+            svg.selectAll('.layer-bar')
+                .data(data)
+                .join('rect')
+                .attr('class', 'layer-bar')
+                .attr('x', d => x(d.layer))
+                .attr('y', d => y(d.accuracy))
+                .attr('width', x.bandwidth())
+                .attr('height', d => y(0.5) - y(d.accuracy))
+                .attr('fill', d => colorScale(d.accuracy))
+                .attr('rx', 4)
+                .style('cursor', 'pointer')
+                .on('mouseover', (event, d) => {
+                    showTooltip(event, `
+                        <strong>Layer ${d.layer}</strong><br>
+                        Accuracy: ${(d.accuracy * 100).toFixed(1)}%<br>
+                        Std Dev: ±${(d.std * 100).toFixed(1)}%<br>
+                        Confidence: ${((d.accuracy - d.std) * 100).toFixed(1)}% - ${((d.accuracy + d.std) * 100).toFixed(1)}%
+                    `);
+                })
+                .on('mouseout', hideTooltip);
+
+            // Baseline line
+            svg.append('line')
+                .attr('x1', margin.left)
+                .attr('x2', width - margin.right)
+                .attr('y1', y(0.5))
+                .attr('y2', y(0.5))
+                .attr('stroke', '#ef4444')
+                .attr('stroke-width', 2)
+                .attr('stroke-dasharray', '5,5');
+
+            svg.append('text')
+                .attr('x', width - margin.right - 10)
+                .attr('y', y(0.5) - 5)
+                .attr('text-anchor', 'end')
+                .attr('fill', '#ef4444')
+                .style('font-size', '12px')
+                .text('Baseline (50%)');
+
+            // Axes
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x))
+                .selectAll('text')
+                .attr('fill', '#a0aec0')
+                .style('font-size', '12px');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y).tickFormat(d => (d * 100).toFixed(0) + '%'))
+                .selectAll('text')
+                .attr('fill', '#a0aec0')
+                .style('font-size', '12px');
+
+            // Axis labels
+            svg.append('text')
+                .attr('x', width / 2)
+                .attr('y', height - 10)
+                .attr('text-anchor', 'middle')
+                .attr('class', 'axis-label')
+                .text('Transformer Layer');
+
+            svg.append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -height / 2)
+                .attr('y', 20)
+                .attr('text-anchor', 'middle')
+                .attr('class', 'axis-label')
+                .text('Probe Accuracy');
+        }
+
+        // Visualization 2: Comparison with confidence intervals
+        function createComparisonView() {
+            const width = 1000;
+            const height = 500;
+            const margin = {top: 40, right: 40, bottom: 60, left: 60};
+
+            const svg = d3.select('#comparison-viz')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            const x = d3.scaleLinear()
+                .domain([0, 11])
+                .range([margin.left, width - margin.right]);
+
+            const y = d3.scaleLinear()
+                .domain([0.45, 0.90])
+                .range([height - margin.bottom, margin.top]);
+
+            // Grid
+            svg.append('g')
+                .selectAll('line')
+                .data(y.ticks(9))
+                .join('line')
+                .attr('class', 'grid-line')
+                .attr('x1', margin.left)
+                .attr('x2', width - margin.right)
+                .attr('y1', d => y(d))
+                .attr('y2', d => y(d));
+
+            // Confidence bands
+            const area = d3.area()
+                .x(d => x(d.layer))
+                .y0(d => y(d.accuracy - d.std))
+                .y1(d => y(d.accuracy + d.std))
+                .curve(d3.curveMonotoneX);
+
+            svg.append('path')
+                .datum(data)
+                .attr('d', area)
+                .attr('fill', '#667eea')
+                .attr('class', 'confidence-band');
+
+            // Line
+            const line = d3.line()
+                .x(d => x(d.layer))
+                .y(d => y(d.accuracy))
+                .curve(d3.curveMonotoneX);
+
+            svg.append('path')
+                .datum(data)
+                .attr('d', line)
+                .attr('fill', 'none')
+                .attr('stroke', '#667eea')
+                .attr('stroke-width', 3);
+
+            // Points
+            svg.selectAll('.data-point')
+                .data(data)
+                .join('circle')
+                .attr('class', 'data-point')
+                .attr('cx', d => x(d.layer))
+                .attr('cy', d => y(d.accuracy))
+                .attr('r', 6)
+                .attr('fill', d => d.layer === 8 ? '#f59e0b' : '#667eea')
+                .attr('stroke', '#fff')
+                .attr('stroke-width', 2)
+                .style('cursor', 'pointer')
+                .on('mouseover', (event, d) => {
+                    showTooltip(event, `
+                        <strong>Layer ${d.layer}</strong><br>
+                        Accuracy: ${(d.accuracy * 100).toFixed(1)}%<br>
+                        95% CI: ${((d.accuracy - 1.96 * d.std) * 100).toFixed(1)}% - ${((d.accuracy + 1.96 * d.std) * 100).toFixed(1)}%
+                    `);
+                })
+                .on('mouseout', hideTooltip);
+
+            // Baseline
+            svg.append('line')
+                .attr('x1', margin.left)
+                .attr('x2', width - margin.right)
+                .attr('y1', y(0.5))
+                .attr('y2', y(0.5))
+                .attr('stroke', '#ef4444')
+                .attr('stroke-width', 2)
+                .attr('stroke-dasharray', '5,5');
+
+            // Axes
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x).ticks(12))
+                .selectAll('text')
+                .attr('fill', '#a0aec0');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y).tickFormat(d => (d * 100).toFixed(0) + '%'))
+                .selectAll('text')
+                .attr('fill', '#a0aec0');
+
+            // Labels
+            svg.append('text')
+                .attr('x', width / 2)
+                .attr('y', height - 10)
+                .attr('text-anchor', 'middle')
+                .attr('class', 'axis-label')
+                .text('Layer');
+
+            svg.append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -height / 2)
+                .attr('y', 20)
+                .attr('text-anchor', 'middle')
+                .attr('class', 'axis-label')
+                .text('Accuracy');
+        }
+
+        // Visualization 3: Animated Progression
+        function createProgressionView() {
+            const width = 1000;
+            const height = 500;
+            const margin = {top: 40, right: 40, bottom: 60, left: 60};
+
+            const svg = d3.select('#progression-viz')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            const x = d3.scaleBand()
+                .domain(data.map(d => d.layer))
+                .range([margin.left, width - margin.right])
+                .padding(0.2);
+
+            const y = d3.scaleLinear()
+                .domain([0.5, 0.85])
+                .range([height - margin.bottom, margin.top]);
+
+            // Grid
+            svg.append('g')
+                .selectAll('line')
+                .data(y.ticks(7))
+                .join('line')
+                .attr('class', 'grid-line')
+                .attr('x1', margin.left)
+                .attr('x2', width - margin.right)
+                .attr('y1', d => y(d))
+                .attr('y2', d => y(d));
+
+            // Bars (initially at baseline)
+            const bars = svg.selectAll('.anim-bar')
+                .data(data)
+                .join('rect')
+                .attr('class', 'anim-bar')
+                .attr('x', d => x(d.layer))
+                .attr('y', y(0.5))
+                .attr('width', x.bandwidth())
+                .attr('height', 0)
+                .attr('fill', d => colorScale(d.accuracy))
+                .attr('rx', 4);
+
+            // Baseline
+            svg.append('line')
+                .attr('x1', margin.left)
+                .attr('x2', width - margin.right)
+                .attr('y1', y(0.5))
+                .attr('y2', y(0.5))
+                .attr('stroke', '#ef4444')
+                .attr('stroke-width', 2)
+                .attr('stroke-dasharray', '5,5');
+
+            // Axes
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x))
+                .selectAll('text')
+                .attr('fill', '#a0aec0');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y).tickFormat(d => (d * 100).toFixed(0) + '%'))
+                .selectAll('text')
+                .attr('fill', '#a0aec0');
+
+            // Animation controls
+            let animationSpeed = 800;
+
+            document.getElementById('animSpeed').addEventListener('input', (e) => {
+                animationSpeed = parseInt(e.target.value);
+                document.getElementById('speedLabel').textContent = animationSpeed + 'ms';
+            });
+
+            document.getElementById('playAnimation').addEventListener('click', () => {
+                bars.transition()
+                    .duration(animationSpeed)
+                    .delay((d, i) => i * animationSpeed)
+                    .attr('y', d => y(d.accuracy))
+                    .attr('height', d => y(0.5) - y(d.accuracy));
+            });
+
+            document.getElementById('resetAnimation').addEventListener('click', () => {
+                bars.transition()
+                    .duration(300)
+                    .attr('y', y(0.5))
+                    .attr('height', 0);
+            });
+        }
+
+        // Visualization 4: Temporal Playground (simplified simulation)
+        function setupPlayground() {
+            const temporalKeywords = {
+                immediate: ['second', 'minute', 'hour', 'now', 'immediately', 'instant'],
+                short: ['day', 'week', 'month', 'tomorrow', 'next week', 'soon'],
+                medium: ['quarter', 'season', 'semester', 'few months'],
+                long: ['year', 'decade', 'century', 'generation', 'lifetime', 'era']
+            };
+
+            document.getElementById('analyzePrompt').addEventListener('click', () => {
+                const text = document.getElementById('promptInput').value.toLowerCase();
+
+                if (!text.trim()) {
+                    document.getElementById('predictionResult').innerHTML = `
+                        <div class="prediction-result">
+                            <p style="color: #f59e0b;">Please enter a prompt to analyze.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Simple heuristic classification
+                let scores = {immediate: 0, short: 0, medium: 0, long: 0};
+
+                for (const [scope, keywords] of Object.entries(temporalKeywords)) {
+                    keywords.forEach(keyword => {
+                        if (text.includes(keyword)) {
+                            scores[scope] += 1;
+                        }
+                    });
+                }
+
+                const total = Object.values(scores).reduce((a, b) => a + b, 0);
+                const normalized = {};
+                for (const [scope, score] of Object.entries(scores)) {
+                    normalized[scope] = total > 0 ? score / total : 0.25;
+                }
+
+                // Add some randomness for realism
+                if (total === 0) {
+                    normalized.short = 0.3 + Math.random() * 0.2;
+                    normalized.long = 0.3 + Math.random() * 0.2;
+                    normalized.medium = 0.2 + Math.random() * 0.1;
+                    normalized.immediate = 0.2 + Math.random() * 0.1;
+                }
+
+                const resultHtml = `
+                    <div class="prediction-result">
+                        <h3 style="margin-bottom: 15px; color: #667eea;">Predicted Temporal Scope</h3>
+                        <div class="probability-bar">
+                            <div class="probability-label">
+                                <span>Immediate (seconds/minutes/hours)</span>
+                                <span>${(normalized.immediate * 100).toFixed(1)}%</span>
+                            </div>
+                            <div style="background: #2d3561; border-radius: 4px;">
+                                <div class="probability-fill" style="width: ${normalized.immediate * 100}%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-bar">
+                            <div class="probability-label">
+                                <span>Short-term (days/weeks)</span>
+                                <span>${(normalized.short * 100).toFixed(1)}%</span>
+                            </div>
+                            <div style="background: #2d3561; border-radius: 4px;">
+                                <div class="probability-fill" style="width: ${normalized.short * 100}%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-bar">
+                            <div class="probability-label">
+                                <span>Medium-term (months/quarters)</span>
+                                <span>${(normalized.medium * 100).toFixed(1)}%</span>
+                            </div>
+                            <div style="background: #2d3561; border-radius: 4px;">
+                                <div class="probability-fill" style="width: ${normalized.medium * 100}%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-bar">
+                            <div class="probability-label">
+                                <span>Long-term (years/decades)</span>
+                                <span>${(normalized.long * 100).toFixed(1)}%</span>
+                            </div>
+                            <div style="background: #2d3561; border-radius: 4px;">
+                                <div class="probability-fill" style="width: ${normalized.long * 100}%"></div>
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; color: #a0aec0; font-size: 0.9em; font-style: italic;">
+                            Note: This is a simplified keyword-based simulation. The full experiment will train
+                            neural probes on actual GPT-2 activations for more accurate classification.
+                        </p>
+                    </div>
+                `;
+
+                document.getElementById('predictionResult').innerHTML = resultHtml;
+            });
+        }
+
+        // Visualization 5: Statistics Dashboard
+        function createStatsDashboard() {
+            const width = 1000;
+            const height = 400;
+            const margin = {top: 40, right: 40, bottom: 60, left: 80};
+
+            const svg = d3.select('#statistics-viz')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            // Layer groups analysis
+            const groups = [
+                {name: 'Early (0-3)', layers: [0,1,2,3], color: '#ef4444'},
+                {name: 'Middle (4-7)', layers: [4,5,6,7], color: '#f59e0b'},
+                {name: 'Late (8-11)', layers: [8,9,10,11], color: '#10b981'}
+            ];
+
+            const groupData = groups.map(group => {
+                const layerData = data.filter(d => group.layers.includes(d.layer));
+                const avgAccuracy = d3.mean(layerData, d => d.accuracy);
+                const avgStd = d3.mean(layerData, d => d.std);
+                return {
+                    name: group.name,
+                    accuracy: avgAccuracy,
+                    std: avgStd,
+                    color: group.color
+                };
+            });
+
+            const x = d3.scaleBand()
+                .domain(groupData.map(d => d.name))
+                .range([margin.left, width - margin.right])
+                .padding(0.3);
+
+            const y = d3.scaleLinear()
+                .domain([0.5, 0.80])
+                .range([height - margin.bottom, margin.top]);
+
+            // Grid
+            svg.append('g')
+                .selectAll('line')
+                .data(y.ticks(6))
+                .join('line')
+                .attr('class', 'grid-line')
+                .attr('x1', margin.left)
+                .attr('x2', width - margin.right)
+                .attr('y1', d => y(d))
+                .attr('y2', d => y(d));
+
+            // Bars
+            svg.selectAll('.group-bar')
+                .data(groupData)
+                .join('rect')
+                .attr('class', 'group-bar')
+                .attr('x', d => x(d.name))
+                .attr('y', d => y(d.accuracy))
+                .attr('width', x.bandwidth())
+                .attr('height', d => y(0.5) - y(d.accuracy))
+                .attr('fill', d => d.color)
+                .attr('rx', 6);
+
+            // Error bars
+            svg.selectAll('.error-bar')
+                .data(groupData)
+                .join('line')
+                .attr('x1', d => x(d.name) + x.bandwidth() / 2)
+                .attr('x2', d => x(d.name) + x.bandwidth() / 2)
+                .attr('y1', d => y(d.accuracy - d.std))
+                .attr('y2', d => y(d.accuracy + d.std))
+                .attr('stroke', '#fff')
+                .attr('stroke-width', 2);
+
+            // Value labels
+            svg.selectAll('.value-label')
+                .data(groupData)
+                .join('text')
+                .attr('x', d => x(d.name) + x.bandwidth() / 2)
+                .attr('y', d => y(d.accuracy) - 10)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#e0e6ed')
+                .style('font-weight', 'bold')
+                .text(d => (d.accuracy * 100).toFixed(1) + '%');
+
+            // Baseline
+            svg.append('line')
+                .attr('x1', margin.left)
+                .attr('x2', width - margin.right)
+                .attr('y1', y(0.5))
+                .attr('y2', y(0.5))
+                .attr('stroke', '#ef4444')
+                .attr('stroke-width', 2)
+                .attr('stroke-dasharray', '5,5');
+
+            // Axes
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x))
+                .selectAll('text')
+                .attr('fill', '#a0aec0')
+                .style('font-size', '13px');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y).tickFormat(d => (d * 100).toFixed(0) + '%'))
+                .selectAll('text')
+                .attr('fill', '#a0aec0');
+
+            svg.append('text')
+                .attr('x', width / 2)
+                .attr('y', height - 10)
+                .attr('text-anchor', 'middle')
+                .attr('class', 'axis-label')
+                .text('Layer Groups');
+
+            svg.append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -height / 2)
+                .attr('y', 25)
+                .attr('text-anchor', 'middle')
+                .attr('class', 'axis-label')
+                .text('Average Accuracy');
+        }
+
+        // Initialize all visualizations
+        createLayerExplorer();
+        createComparisonView();
+        createProgressionView();
+        setupPlayground();
+        createStatsDashboard();
+    </script>
+</body>
+</html>

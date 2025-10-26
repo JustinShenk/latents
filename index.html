@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latents: Research Results & Visualizations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #718096;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            padding: 1.5rem;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            color: white;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-metadata {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 0.5rem;
+        }
+
+        .card-metadata-item {
+            margin: 0.25rem 0;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .badge.warning {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .badge.preliminary {
+            background: #ff9800;
+            color: white;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .github-link:hover {
+            color: #764ba2;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .warning-box strong {
+            color: #856404;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #718096;
+        }
+
+        .details-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: white;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #718096;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #2d3748;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #718096;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Latents: Research Results</h1>
+        <p class="subtitle">Multi-Dimensional LLM Steering Visualizations</p>
+
+        <div class="section">
+            <h2>📊 Research Experiments</h2>
+            <p>Interactive visualizations from our research on temporal steering and confound analysis.</p>
+
+            <div class="warning-box">
+                <strong>⚠️ Preliminary Results:</strong> These results are from ongoing research and require further validation. See each visualization for details.
+            </div>
+
+            <div id="research-grid" class="card-grid">
+                <div class="loading">Loading experiments...</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎨 Example Visualizations</h2>
+            <p>Demonstration dashboards and exploratory tools (examples - not research results).</p>
+
+            <div id="examples-grid" class="card-grid">
+                <div class="loading">Loading examples...</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📚 About This Project</h2>
+            <p>
+                <strong>Latents</strong> is a flexible framework for steering language models along multiple behavioral
+                dimensions using Contrastive Activation Addition (CAA). This site hosts interactive visualizations
+                from our research experiments and example demonstrations.
+            </p>
+            <p>
+                <a href="https://github.com/JustinShenk/latents" class="github-link" target="_blank" rel="noopener">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    View on GitHub
+                </a>
+            </p>
+        </div>
+
+        <footer>
+            <p><strong>Latents</strong> - Multi-Dimensional LLM Steering</p>
+            <p>© 2025 Justin Shenk | <a href="https://github.com/JustinShenk/latents" target="_blank" rel="noopener">GitHub</a></p>
+        </footer>
+    </div>
+
+    <!-- Details Modal -->
+    <div id="details-modal" class="details-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        // Load experiments and examples dynamically
+        async function loadExperiments() {
+            try {
+                const response = await fetch('/experiments.json');
+                const data = await response.json();
+
+                renderExperiments(data.experiments);
+                renderExamples(data.examples);
+            } catch (error) {
+                console.error('Error loading experiments:', error);
+                document.getElementById('research-grid').innerHTML =
+                    '<p style="color: #e53e3e;">Failed to load experiments. Please try again later.</p>';
+                document.getElementById('examples-grid').innerHTML =
+                    '<p style="color: #e53e3e;">Failed to load examples. Please try again later.</p>';
+            }
+        }
+
+        function renderExperiments(experiments) {
+            const grid = document.getElementById('research-grid');
+            grid.innerHTML = '';
+
+            experiments.forEach(exp => {
+                const card = createCard(exp, true);
+                grid.appendChild(card);
+            });
+        }
+
+        function renderExamples(examples) {
+            const grid = document.getElementById('examples-grid');
+            grid.innerHTML = '';
+
+            examples.forEach(example => {
+                const card = createCard(example, false);
+                grid.appendChild(card);
+            });
+        }
+
+        function createCard(item, isExperiment) {
+            const card = document.createElement('a');
+            card.className = 'card';
+            card.href = item.file;
+
+            // Add click handler for experiments to show details first
+            if (isExperiment && item.metadata) {
+                card.onclick = (e) => {
+                    if (e.ctrlKey || e.metaKey) {
+                        return true; // Allow opening in new tab with Cmd/Ctrl+click
+                    }
+                    e.preventDefault();
+                    showDetails(item);
+                };
+            }
+
+            const title = document.createElement('h3');
+            title.textContent = item.title;
+            card.appendChild(title);
+
+            const desc = document.createElement('p');
+            desc.textContent = item.description;
+            card.appendChild(desc);
+
+            // Add metadata preview for experiments
+            if (isExperiment && item.metadata) {
+                const metadata = document.createElement('div');
+                metadata.className = 'card-metadata';
+                metadata.innerHTML = `
+                    <div class="card-metadata-item">📅 ${item.date}</div>
+                    <div class="card-metadata-item">📊 Dataset: ${item.metadata.dataset_size} samples</div>
+                    <div class="card-metadata-item">🤖 Model: ${item.metadata.model}</div>
+                `;
+                card.appendChild(metadata);
+            }
+
+            // Add badges
+            if (item.badges && item.badges.length > 0) {
+                const badgeContainer = document.createElement('div');
+                badgeContainer.className = 'badge-container';
+
+                item.badges.forEach(badgeText => {
+                    const badge = document.createElement('span');
+                    badge.className = 'badge';
+                    if (badgeText.toLowerCase().includes('preliminary')) {
+                        badge.classList.add('preliminary');
+                    }
+                    badge.textContent = badgeText;
+                    badgeContainer.appendChild(badge);
+                });
+
+                card.appendChild(badgeContainer);
+            }
+
+            return card;
+        }
+
+        function showDetails(experiment) {
+            const modal = document.getElementById('details-modal');
+            const modalBody = document.getElementById('modal-body');
+
+            let html = `
+                <h2>${experiment.title}</h2>
+                <p style="color: #718096; margin-bottom: 1.5rem;">${experiment.description}</p>
+            `;
+
+            if (experiment.metadata) {
+                html += `
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Experiment Details</h3>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;"><strong>Date</strong></td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;">${experiment.date}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;"><strong>Status</strong></td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;">${experiment.status}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;"><strong>Dataset Size</strong></td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;">${experiment.metadata.dataset_size} samples</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;"><strong>Model</strong></td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;">${experiment.metadata.model}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;"><strong>Conditions</strong></td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;">${experiment.metadata.conditions.join(', ')}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;"><strong>PC1 Variance</strong></td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;">${experiment.metadata.pc1_variance}%</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;"><strong>PC2 Variance</strong></td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;">${experiment.metadata.pc2_variance}%</td>
+                        </tr>
+                    </table>
+                `;
+
+                if (experiment.metadata.warning) {
+                    html += `
+                        <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+                            <strong style="color: #856404;">⚠️ Warning:</strong> ${experiment.metadata.warning}
+                        </div>
+                    `;
+                }
+            }
+
+            if (experiment.related_files) {
+                html += `<h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Related Files</h3><ul style="list-style: none; padding: 0;">`;
+                for (const [key, value] of Object.entries(experiment.related_files)) {
+                    html += `<li style="margin-bottom: 0.5rem;">
+                        <strong>${key}:</strong>
+                        <a href="${value}" target="_blank" style="color: #667eea;">${value}</a>
+                    </li>`;
+                }
+                html += `</ul>`;
+            }
+
+            html += `
+                <div style="margin-top: 2rem; text-align: center;">
+                    <a href="${experiment.file}"
+                       style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                              color: white; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none;
+                              font-weight: 600;">
+                        View Visualization →
+                    </a>
+                </div>
+            `;
+
+            modalBody.innerHTML = html;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('details-modal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('details-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Load experiments on page load
+        window.addEventListener('DOMContentLoaded', loadExperiments);
+    </script>
+</body>
+</html>
